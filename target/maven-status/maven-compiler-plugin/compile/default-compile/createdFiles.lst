@@ -1,0 +1,15 @@
+Controlador\Consultas.class
+com\mycompany\lugxstore\JakartaRestConfiguration.class
+Modelo\ModeloProducto.class
+Modelo\Usuario.class
+Modelo\Reservacion.class
+Controlador\Conexion.class
+servlet\RegistrarUsuarios.class
+servlet\AddCart.class
+Enum\tipoUsuario.class
+Controlador\ControladorProducto.class
+servlet\InicioSesion.class
+com\mycompany\lugxstore\resources\JakartaEE10Resource.class
+Modelo\Videojuego.class
+Modelo\Articulo.class
+Modelo\CarritoItem.class
