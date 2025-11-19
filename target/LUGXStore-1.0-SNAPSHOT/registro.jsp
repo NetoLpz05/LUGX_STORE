@@ -13,9 +13,10 @@
     </head>
     <body>
         <h1>Registrar Usuario</h1>
-        <<form action="nuevousuario" method="post">
-            <input type="text" name="usuario" placeholder="nombre de usuario"><br>
-            <input type="password" name="pass"><br>
+        <form action="nuevousuario" method="post">
+            <input type="text" name="usuario" placeholder="Nombre de usuario"><br>
+            <input type="email" name="correo" placeholder="Correo electrónico"><br> 
+            <input type="password" name="pass" placeholder="Contraseña"><br>
             <input type="submit" value="Registrar Usuario">
         </form>
     </body>

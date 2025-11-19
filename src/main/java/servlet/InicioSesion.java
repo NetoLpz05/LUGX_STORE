@@ -9,16 +9,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-
 /**
  *
  * @author Laboratorios
  */
+@WebServlet(name = "InicioSesion", urlPatterns = {"/iniciar"})
 public class InicioSesion extends HttpServlet {
 
     /**
@@ -31,29 +32,29 @@ public class InicioSesion extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
-    response.setContentType("text/html;charset=UTF-8");
-    PrintWriter out = response.getWriter();
-    
-    String usuario = request.getParameter("nombre");
-    String clave = request.getParameter("password");
-    
-    Consultas sql = null; // 1. Declara el objeto fuera del try
-    
-    try {
-        sql = new Consultas(); // 2. Inicializa la conexión
-        
-        if (sql.autenticacion(usuario, clave)) {
-            HttpSession objSesion = request.getSession(true);
-            objSesion.setAttribute("nombre", usuario);
-            response.sendRedirect("menu.jsp");
-        } else {
-            response.sendRedirect("index.jsp");
-        }
-        
-    } catch (SQLException e) {
-        // Si hay un error al conectar con la BD
-        System.err.println("Error de SQL al autenticar: " + e);
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+
+        String usuario = request.getParameter("usuario");
+        String clave = request.getParameter("pass");
+
+        Consultas sql = null; // 1. Declara el objeto fuera del try
+
+        try {
+            sql = new Consultas(); // 2. Inicializa la conexión
+
+            if (sql.autenticacion(usuario, clave)) {
+                HttpSession objSesion = request.getSession(true);
+                objSesion.setAttribute("nombre", usuario);
+                response.sendRedirect("inicio.jsp");
+            } else {
+                response.sendRedirect("index.jsp");
+            }
+
+        } catch (SQLException e) {
+            // Si hay un error al conectar con la BD
+            System.err.println("Error de SQL al autenticar: " + e);
         } finally {
             if (sql != null) {
                 sql.cerrarConexion();
@@ -71,7 +72,7 @@ public class InicioSesion extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response){
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         try {
             processRequest(request, response);
         } catch (ServletException ex) {
@@ -106,4 +107,3 @@ public class InicioSesion extends HttpServlet {
     }// </editor-fold>
 
 }
-

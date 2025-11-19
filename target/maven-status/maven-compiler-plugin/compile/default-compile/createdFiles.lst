@@ -4,6 +4,7 @@ Modelo\ModeloProducto.class
 Modelo\Usuario.class
 Modelo\Reservacion.class
 Controlador\Conexion.class
+Modelo\VideojuegoDAO.class
 servlet\RegistrarUsuarios.class
 servlet\AddCart.class
 Enum\tipoUsuario.class

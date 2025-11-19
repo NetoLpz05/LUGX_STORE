@@ -1,4 +1,5 @@
 package Controlador;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,7 +17,7 @@ public class Consultas extends Conexion {
         PreparedStatement pst = null;
         ResultSet rs = null;
         try {
-            String consulta = "select * from usuarios where nombre = ? and password = ?";
+            String consulta = "select * from usuario where nombre = ? and password = ?";
             System.out.println("La consulta es: " + consulta);
             pst = getConexion().prepareStatement(consulta);
             pst.setString(1, usuario);
@@ -30,8 +31,12 @@ public class Consultas extends Conexion {
             System.out.println("Error en: " + e);
         } finally {
             try {
-                if (rs != null) rs.close();
-                if (pst != null) pst.close();
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
                 // if(getConexion() != null) getConexion().close(); <-- LÍNEA ELIMINADA
             } catch (Exception e) {
                 System.out.println("Error al cerrar recursos: " + e);
@@ -40,21 +45,27 @@ public class Consultas extends Conexion {
         return false;
     }
 
-    public boolean registrar(String usuario, String clave) {
+    public boolean registrar(String usuario, String clave, String correo, String tipo) {
         PreparedStatement pst = null;
 
         try {
-            String consulta = "insert into usuarios (nombre, pass) values (?, ?)";
+            String consulta = "insert into usuario (nombre, correo, password, tipo_usuario) values (?, ?, ?, ?)";
             pst = getConexion().prepareStatement(consulta);
             pst.setString(1, usuario);
-            pst.setString(2, clave);
+            pst.setString(2, correo);
+            pst.setString(3, clave);
+            pst.setString(4, tipo);
+
             if (pst.executeUpdate() == 1) {
                 return true;
             }
+
         } catch (Exception e) {
             System.out.println("Error en: " + e);
             try {
-                if (pst != null) pst.close();
+                if (pst != null) {
+                    pst.close();
+                }
                 // if(getConexion() != null) getConexion().close();
             } catch (SQLException ex) {
                 System.out.println("Error al cerrar recursos: " + e);
@@ -62,7 +73,7 @@ public class Consultas extends Conexion {
         }
         return false;
     }
-    
+
     public void cerrarConexion() {
         try {
             if (getConexion() != null) {

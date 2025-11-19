@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Laboratorios
  */
+@WebServlet(name = "RegistrarUsuarios", urlPatterns = {"/nuevousuario"})
 public class RegistrarUsuarios extends HttpServlet {
 
     /**
@@ -32,14 +34,18 @@ public class RegistrarUsuarios extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        
+
         String usuario = request.getParameter("usuario");
+        String correo = request.getParameter("correo"); // <--- Nuevo
         String clave = request.getParameter("pass");
-    
+        String tipo = "CLIENTE"; // <--- Definimos el valor por defecto para el ENUM
+
         Consultas sql = new Consultas();
-        if(sql.registrar(usuario, clave)){
+
+        // Ahora pasamos 4 variables en lugar de 2
+        if (sql.registrar(usuario, clave, correo, tipo)) {
             response.sendRedirect("index.jsp");
-        }else{
+        } else {
             response.sendRedirect("registro.jsp");
         }
     }
