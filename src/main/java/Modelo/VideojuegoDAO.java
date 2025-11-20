@@ -13,8 +13,7 @@ import java.util.List;
  * @author Usuario
  */
 public class VideojuegoDAO {
-    
-    // --- QUERY STRINGS ---
+
     private static final String INSERTAR = 
         "INSERT INTO videojuego (nombre, genero, precio, stock, descripcion, imagen, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String SELECCIONAR_TODO = 
@@ -27,7 +26,7 @@ public class VideojuegoDAO {
             "DELETE FROM videojuego WHERE idJuego = ?";
     
     /**
-     * Método auxiliar para mapear un ResultSet a un objeto Juego.
+     * Método auxiliar para mapear un ResultSet a un objeto Juego
      */
     private Videojuego crearJuegoDesdeResultSet(ResultSet rs) throws SQLException {
         int idJuego = rs.getInt("idJuego");
@@ -42,9 +41,7 @@ public class VideojuegoDAO {
         return new Videojuego(idJuego, nombre, genero, precio, stock, descripcion, imagen, plataforma);
     }
     
-    // --------------------------------------------------------------------------------
     // 1. READ: Obtener todos los juegos
-    // --------------------------------------------------------------------------------
     public List<Videojuego> listarTodos() throws RuntimeException {
         List<Videojuego> lista = new ArrayList<>();
 
@@ -56,16 +53,14 @@ public class VideojuegoDAO {
                 lista.add(crearJuegoDesdeResultSet(rs));
             }
         } catch (SQLException e) {
-            System.err.println("❌ ERROR FATAL en VideojuegoDAO.listarTodos: " + e.getMessage());
+            System.err.println("ERROR FATAL en VideojuegoDAO.listarTodos: " + e.getMessage());
             e.printStackTrace();
             throw new RuntimeException("Error en la Base de Datos al listar videojuegos.", e);
         }
         return lista;
     }
 
-    // --------------------------------------------------------------------------------
     // 2. READ: Obtener un juego por ID
-    // --------------------------------------------------------------------------------
     public Videojuego obtenerPorId(int id) {
         Videojuego juego = null;
         try (Connection con = new Conexion().getConexion();
@@ -85,9 +80,7 @@ public class VideojuegoDAO {
         return juego;
     }
     
-    // --------------------------------------------------------------------------------
-    // 3. CREATE: Insertar un nuevo juego (CORREGIDO)
-    // --------------------------------------------------------------------------------
+    // 3. CREATE: Insertar un nuevo juego
     public boolean insertar(Videojuego juego) {
         int filasAfectadas = 0;
         try (Connection con = new Conexion().getConexion();
@@ -103,7 +96,6 @@ public class VideojuegoDAO {
             
             filasAfectadas = ps.executeUpdate();
             
-            // 🚀 CORRECCIÓN: Hace permanentes los cambios si no hay auto-commit.
             if (filasAfectadas > 0) {
                 con.commit(); 
             }
@@ -115,9 +107,7 @@ public class VideojuegoDAO {
         return filasAfectadas > 0;
     }
 
-    // --------------------------------------------------------------------------------
-    // 4. UPDATE: Actualizar un juego existente (CORREGIDO)
-    // --------------------------------------------------------------------------------
+    // 4. UPDATE: Actualizar un juego existente
     public boolean actualizar(Videojuego juego) {
         int filasAfectadas = 0;
         try (Connection con = new Conexion().getConexion();
@@ -134,7 +124,6 @@ public class VideojuegoDAO {
             
             filasAfectadas = ps.executeUpdate();
             
-            // 🚀 CORRECCIÓN: Hace permanentes los cambios si no hay auto-commit.
             if (filasAfectadas > 0) {
                 con.commit(); 
             }
@@ -146,9 +135,7 @@ public class VideojuegoDAO {
         return filasAfectadas > 0;
     }
 
-    // --------------------------------------------------------------------------------
-    // 5. DELETE: Eliminar un juego (CORREGIDO)
-    // --------------------------------------------------------------------------------
+    // 5. DELETE: Eliminar un juego
     public boolean eliminar(int id) {
         int filasAfectadas = 0;
         try (Connection con = new Conexion().getConexion();
@@ -158,7 +145,6 @@ public class VideojuegoDAO {
             
             filasAfectadas = ps.executeUpdate();
             
-            // 🚀 CORRECCIÓN: Hace permanentes los cambios si no hay auto-commit.
             if (filasAfectadas > 0) {
                 con.commit(); 
             }

@@ -399,7 +399,7 @@
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Copyright © 2048 LUGX Gaming Company. Todos los derechos reservados. &nbsp;&nbsp; <a rel="nofollow" href="#" target="_blank"></a></p>
+        <p>Copyright © 2025 LUGX Gaming Company. Todos los derechos reservados. &nbsp;&nbsp; <a rel="nofollow" href="#" target="_blank"></a></p>
       </div>
     </div>
   </footer>

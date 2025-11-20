@@ -9,6 +9,7 @@ Modelo\VideojuegoDAO.class
 servlet\RegistrarUsuarios.class
 servlet\AddCart.class
 Enum\tipoUsuario.class
+Modelo\UsuarioDAO.class
 Controlador\ControladorProducto.class
 servlet\InicioSesion.class
 com\mycompany\lugxstore\resources\JakartaEE10Resource.class
