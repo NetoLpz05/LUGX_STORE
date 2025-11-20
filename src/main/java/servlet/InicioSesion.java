@@ -6,7 +6,6 @@ package servlet;
 
 import Controlador.Consultas;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -34,27 +33,46 @@ public class InicioSesion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
 
         String usuario = request.getParameter("usuario");
         String clave = request.getParameter("pass");
 
-        Consultas sql = null; // 1. Declara el objeto fuera del try
+        Consultas sql = null;
 
         try {
-            sql = new Consultas(); // 2. Inicializa la conexión
+            sql = new Consultas();
 
             if (sql.autenticacion(usuario, clave)) {
+                
+                // 1. Verificar el rol de administrador
+                boolean esAdmin = sql.esAdministrador(usuario); 
+                
+                // 2. Configurar la sesión
                 HttpSession objSesion = request.getSession(true);
                 objSesion.setAttribute("nombre", usuario);
-                response.sendRedirect("inicio.jsp");
+                objSesion.setAttribute("esAdmin", esAdmin); // <-- GUARDAR EL ROL
+                
+                // 3. Redirección condicional
+                if (esAdmin) {
+                    // 🚀 Éxito y es ADMIN: Redirigir al controlador del panel
+                    // Usamos getContextPath() para la ruta absoluta y robusta
+                    response.sendRedirect(request.getContextPath() + "/JuegoServlet"); 
+                } else {
+                    // Éxito, pero es CLIENTE: Redirigir a la página de inicio normal
+                    response.sendRedirect("inicio.jsp");
+                }
             } else {
-                response.sendRedirect("index.jsp");
+                // Autenticación fallida
+                // Opcional: Agregar mensaje de error
+                request.setAttribute("error", "Usuario o contraseña incorrectos.");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
 
         } catch (SQLException e) {
-            // Si hay un error al conectar con la BD
-            System.err.println("Error de SQL al autenticar: " + e);
+            System.err.println("Error de SQL al autenticar o verificar rol: " + e);
+            // Manejo de error de BD, redirigir al login
+            request.setAttribute("error", "Error del servidor. Intente más tarde.");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         } finally {
             if (sql != null) {
                 sql.cerrarConexion();

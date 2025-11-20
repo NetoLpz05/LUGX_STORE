@@ -1,5 +1,6 @@
 package Controlador;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -83,5 +84,37 @@ public class Consultas extends Conexion {
         } catch (SQLException e) {
             System.out.println("Error al cerrar la conexión: " + e);
         }
+    }
+    
+    public boolean esAdministrador(String usuario) {
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        boolean esAdmin = false;
+        
+        String sql = "SELECT tipo_usuario FROM usuario WHERE nombre = ?";
+        
+        try {
+            pst = getConexion().prepareStatement(sql);
+            pst.setString(1, usuario);
+            
+            rs = pst.executeQuery();
+            
+            if (rs.next()) {
+                String tipo = rs.getString("tipo_usuario");
+                if ("admin".equalsIgnoreCase(tipo)) {
+                    esAdmin = true;
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("Error de SQL al verificar rol: " + e.getMessage());
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (pst != null) pst.close();
+            } catch (Exception e) {
+                System.out.println("Error al cerrar recursos: " + e);
+            }
+        }
+        return esAdmin;
     }
 }

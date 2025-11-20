@@ -16,16 +16,15 @@ public class VideojuegoDAO {
     
     // --- QUERY STRINGS ---
     private static final String INSERTAR = 
-            "INSERT INTO Juego (nombre, genero, precio, stock, descripcion, imagen, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        "INSERT INTO videojuego (nombre, genero, precio, stock, descripcion, imagen, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String SELECCIONAR_TODO = 
-            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, plataforma FROM Juego";
+            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, plataforma FROM videojuego";
     private static final String SELECCIONAR_X_ID = 
-            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, plataforma FROM Juego WHERE idJuego = ?";
+            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, plataforma FROM videojuego WHERE idJuego = ?";
     private static final String ACTUALIZAR = 
-            "UPDATE Juego SET nombre=?, genero=?, precio=?, stock=?, descripcion=?, imagen=?, plataforma=? WHERE idJuego = ?";
+            "UPDATE videojuego SET nombre=?, genero=?, precio=?, stock=?, descripcion=?, imagen=?, plataforma=? WHERE idJuego = ?";
     private static final String ELIMINAR_X_ID = 
-            "DELETE FROM Juego WHERE idJuego = ?";
-
+            "DELETE FROM videojuego WHERE idJuego = ?";
     
     /**
      * Método auxiliar para mapear un ResultSet a un objeto Juego.
@@ -46,19 +45,20 @@ public class VideojuegoDAO {
     // --------------------------------------------------------------------------------
     // 1. READ: Obtener todos los juegos
     // --------------------------------------------------------------------------------
-    public List<Videojuego> listarTodos() {
+    public List<Videojuego> listarTodos() throws RuntimeException {
         List<Videojuego> lista = new ArrayList<>();
-        // Usamos try-with-resources para asegurar que Connection, PreparedStatement y ResultSet se cierren automáticamente
+
         try (Connection con = new Conexion().getConexion();
              PreparedStatement ps = con.prepareStatement(SELECCIONAR_TODO);
-             ResultSet rs = ps.executeQuery()) {
+             ResultSet rs = ps.executeQuery()) { 
 
             while (rs.next()) {
                 lista.add(crearJuegoDesdeResultSet(rs));
             }
         } catch (SQLException e) {
-            System.err.println("Error al listar juegos: " + e.getMessage());
+            System.err.println("❌ ERROR FATAL en VideojuegoDAO.listarTodos: " + e.getMessage());
             e.printStackTrace();
+            throw new RuntimeException("Error en la Base de Datos al listar videojuegos.", e);
         }
         return lista;
     }
@@ -86,7 +86,7 @@ public class VideojuegoDAO {
     }
     
     // --------------------------------------------------------------------------------
-    // 3. CREATE: Insertar un nuevo juego
+    // 3. CREATE: Insertar un nuevo juego (CORREGIDO)
     // --------------------------------------------------------------------------------
     public boolean insertar(Videojuego juego) {
         int filasAfectadas = 0;
@@ -103,6 +103,11 @@ public class VideojuegoDAO {
             
             filasAfectadas = ps.executeUpdate();
             
+            // 🚀 CORRECCIÓN: Hace permanentes los cambios si no hay auto-commit.
+            if (filasAfectadas > 0) {
+                con.commit(); 
+            }
+            
         } catch (SQLException e) {
             System.err.println("Error al insertar juego: " + e.getMessage());
             e.printStackTrace();
@@ -111,7 +116,7 @@ public class VideojuegoDAO {
     }
 
     // --------------------------------------------------------------------------------
-    // 4. UPDATE: Actualizar un juego existente
+    // 4. UPDATE: Actualizar un juego existente (CORREGIDO)
     // --------------------------------------------------------------------------------
     public boolean actualizar(Videojuego juego) {
         int filasAfectadas = 0;
@@ -125,9 +130,14 @@ public class VideojuegoDAO {
             ps.setString(5, juego.getDescripcion());
             ps.setString(6, juego.getImagen());
             ps.setString(7, juego.getPlataforma());
-            ps.setInt(8, juego.getIdJuego()); // El ID es el último parámetro en el UPDATE
+            ps.setInt(8, juego.getIdJuego());
             
             filasAfectadas = ps.executeUpdate();
+            
+            // 🚀 CORRECCIÓN: Hace permanentes los cambios si no hay auto-commit.
+            if (filasAfectadas > 0) {
+                con.commit(); 
+            }
             
         } catch (SQLException e) {
             System.err.println("Error al actualizar juego: " + e.getMessage());
@@ -137,7 +147,7 @@ public class VideojuegoDAO {
     }
 
     // --------------------------------------------------------------------------------
-    // 5. DELETE: Eliminar un juego
+    // 5. DELETE: Eliminar un juego (CORREGIDO)
     // --------------------------------------------------------------------------------
     public boolean eliminar(int id) {
         int filasAfectadas = 0;
@@ -148,6 +158,11 @@ public class VideojuegoDAO {
             
             filasAfectadas = ps.executeUpdate();
             
+            // 🚀 CORRECCIÓN: Hace permanentes los cambios si no hay auto-commit.
+            if (filasAfectadas > 0) {
+                con.commit(); 
+            }
+            
         } catch (SQLException e) {
             System.err.println("Error al eliminar juego: " + e.getMessage());
             e.printStackTrace();
@@ -155,6 +170,3 @@ public class VideojuegoDAO {
         return filasAfectadas > 0;
     }
 }
-
-
-

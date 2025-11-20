@@ -3,6 +3,7 @@ com\mycompany\lugxstore\JakartaRestConfiguration.class
 Modelo\ModeloProducto.class
 Modelo\Usuario.class
 Modelo\Reservacion.class
+servlet\JuegoServlet.class
 Controlador\Conexion.class
 Modelo\VideojuegoDAO.class
 servlet\RegistrarUsuarios.class
