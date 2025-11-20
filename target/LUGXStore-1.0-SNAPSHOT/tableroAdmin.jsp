@@ -193,7 +193,7 @@
                 Buscar Videojuego
             </button>
             <a href="JuegoServlet?accion=listar" class="btn-reset">
-            ⟲ Ver Todos
+            ⟲ Ver Todos / Actualizar
             </a>
         </form>
     </div>
@@ -255,7 +255,7 @@
                 Buscar Usuario
             </button>
             <a href="JuegoServlet?accion=listar" class="btn-reset">
-            ⟲ Ver Todos
+            ⟲ Ver Todos / Actualizar
             </a>
         </form>
     </div>
