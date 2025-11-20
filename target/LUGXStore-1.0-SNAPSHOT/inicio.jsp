@@ -163,7 +163,7 @@
               <span class="category">JRPG/Aventura</span>
               <h4>Leyendas<br>
                 Pokémon: Z-A</h4>
-              <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-PokemonZA.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -171,14 +171,14 @@
         <div class="col-lg-3 col-md-6">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Silso.html"><img src="assets/images/Silksong.avif" alt=""></a>
+              <a href="Detalles-Silso.jsp"><img src="assets/images/Silksong.avif" alt=""></a>
               <span class="price">$20</span>
             </div>
             <div class="down-content">
               <span class="category">Metroidvania</span>
               <h4>Hollow Knight: <br>
                 Silksong</h4>
-              <a href="Detalles-Silso.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-Silso.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -186,14 +186,14 @@
         <div class="col-lg-3 col-md-6">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-StreetFighter6.html"><img src="assets/images/SF6.jpg" alt=""></a>
+              <a href="Detalles-StreetFighter6.jsp"><img src="assets/images/SF6.jpg" alt=""></a>
               <span class="price"><em>$45</em>$30</span>
             </div>
             <div class="down-content">
               <span class="category">Peleas</span>
               <h4>Street <br>
                 Fighter 6 </h4>
-              <a href="Detalles-StreetFighter6.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-StreetFighter6.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -201,7 +201,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Persona5.html"><img src="assets/images/Persona5.jpg" alt=""></a>
+              <a href="Detalles-Persona5.jsp"><img src="assets/images/Persona5.jpg" alt=""></a>
               <span class="price"><em>$40</em>$30</span>
             </div>
             <div class="down-content">
@@ -209,7 +209,7 @@
               <h4>Persona 5:<br>
               Royal<BR>
               </h4>
-              <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="product-details.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -228,13 +228,13 @@
         </div>
         <div class="col-lg-6">
           <div class="main-button">
-            <a href="shop.html">Ver Todo</a>
+            <a href="shop.jsp">Ver Todo</a>
           </div>
         </div>
         <div class="col-lg-2 col-md-6 col-sm-6">
           <div class="item">
             <div class="thumb">
-              <a href="product-details.html"><img src="assets/images/top-game-01.jpg" alt=""></a>
+              <a href="product-details.jsp"><img src="assets/images/top-game-01.jpg" alt=""></a>
             </div>
             <div class="down-content">
                 <h4>Warframe: Veilbreaker</h4>
@@ -245,7 +245,7 @@
         <div class="col-lg-2 col-md-6 col-sm-6">
           <div class="item">
             <div class="thumb">
-              <a href="product-details.html"><img src="assets/images/top-game-02.jpg" alt=""></a>
+              <a href="product-details.jsp"><img src="assets/images/top-game-02.jpg" alt=""></a>
             </div>
             <div class="down-content">
                 <h4>PUBG: Battlegrounds</h4>
@@ -256,7 +256,7 @@
         <div class="col-lg-2 col-md-6 col-sm-6">
           <div class="item">
             <div class="thumb">
-              <a href="product-details.html"><img src="assets/images/top-game-03.jpg" alt=""></a>
+              <a href="product-details.jsp"><img src="assets/images/top-game-03.jpg" alt=""></a>
             </div>
             <div class="down-content">
                 <h4>APEX Legends</h4>
@@ -267,7 +267,7 @@
         <div class="col-lg-2 col-md-6 col-sm-6">
           <div class="item">
             <div class="thumb">
-              <a href="product-details.html"><img src="assets/images/top-game-04.jpg" alt=""></a>
+              <a href="product-details.jsp"><img src="assets/images/top-game-04.jpg" alt=""></a>
             </div>
             <div class="down-content">
                 <h4>Los Sims 4</h4>
@@ -278,7 +278,7 @@
         <div class="col-lg-2 col-md-6 col-sm-6">
           <div class="item">
             <div class="thumb">
-              <a href="product-details.html"><img src="assets/images/top-game-05.jpg" alt=""></a>
+              <a href="product-details.jsp"><img src="assets/images/top-game-05.jpg" alt=""></a>
             </div>
             <div class="down-content">
                 <h4>Lost Ark</h4>
@@ -289,7 +289,7 @@
         <div class="col-lg-2 col-md-6 col-sm-6">
           <div class="item">
             <div class="thumb">
-              <a href="product-details.html"><img src="assets/images/top-game-06.jpg" alt=""></a>
+              <a href="product-details.jsp"><img src="assets/images/top-game-06.jpg" alt=""></a>
             </div>
             <div class="down-content">
               <!-- <span class="category">Adventure</span> -->
