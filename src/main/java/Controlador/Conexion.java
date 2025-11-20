@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class Conexion {
 
     private String USERNAME = "root";
-    private String PASSWORD = "WidenfsmostWanted12";
+    private String PASSWORD = "itson";
     private String HOST = "localhost";
     private String PORT = "3306";
     private String DATABASE = "lugx";

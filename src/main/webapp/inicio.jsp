@@ -156,7 +156,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-PokemonZA.html"><img src="assets/images/Pokémon ZA.jpg" alt=""></a>
+              <a href="Detalles-PokemonZA.jsp"><img src="assets/images/Pokémon ZA.jpg" alt=""></a>
               <span class="price"><em>$80</em>$60</span>
             </div>
             <div class="down-content">
