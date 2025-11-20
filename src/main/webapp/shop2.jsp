@@ -97,13 +97,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 indie">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Celeste.html"><img src="assets/images/CelesteShop.jpg" alt=""></a>
+              <a href="Detalles-Celeste.jsp"><img src="assets/images/CelesteShop.jpg" alt=""></a>
               <span class="price">$15</span>
             </div>
             <div class="down-content">
               <span class="category">Indie</span>
               <h4>Celeste</h4>
-              <a href="Detalles-Celeste.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-Celeste.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -111,13 +111,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 indie">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Balatro.html"><img src="assets/images/balatro.jpg" alt=""></a>
+              <a href="Detalles-Balatro.jsp"><img src="assets/images/balatro.jpg" alt=""></a>
               <span class="price">$20</span>
             </div>
             <div class="down-content">
               <span class="category">Indie</span>
               <h4>Balatro</h4>
-              <a href="Detalles-Balatro.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-Balatro.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>

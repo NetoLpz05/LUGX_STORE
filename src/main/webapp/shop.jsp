@@ -14,16 +14,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <title>Lugx Gaming - Tienda</title>
-    <link rel="icon" href="assets/images/logo.ico" type="image/x-icon">
+    <link rel="icon" href="img/logo.ico" type="image/x-icon">
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="${contextPath}/CSS/fontawesome.css">
+    <link rel="stylesheet" href="${contextPath}/CSS/templatemo-lugx-gaming.css">
+    <link rel="stylesheet" href="${contextPath}/CSS/owl.css">
+    <link rel="stylesheet" href="${contextPath}/CSS/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
   </head>
 
@@ -76,7 +76,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h3>Tienda</h3>
-          <span class="breadcrumb"><a href="index.html">Inicio</a> > Tienda</span>
+          <span class="breadcrumb"><a href="inicio.jsp">Inicio</a> > Tienda</span>
         </div>
       </div>
     </div>
@@ -86,7 +86,7 @@
     <div class="container">
       <ul class="trending-filter">
         <li>
-          <a class="is_active" href="#!" data-filter="*">Mostrar Todo</a>
+          <a class="is_active" href="shop.jsp" data-filter="*">Mostrar Todo</a>
         </li>
         <li>
           <a href="#!" data-filter=".adv">Aventura</a>
@@ -106,14 +106,14 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 adv">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-ACShadows.html"><img src="assets/images/Assassins Creed Shadows.jpg" alt=""></a>
+              <a href="Detalles-ACShadows.jsp"><img src="assets/images/Assassins Creed Shadows.jpg" alt=""></a>
               <span class="price">$80</span>
             </div>
             <div class="down-content">
               <span class="category">Aventura</span>
               <h4>Assassin's Creed <br>
                 Shadows</h4>
-              <a href="Detalles-ACShadows.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-ACShadows.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -121,14 +121,14 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 str">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-PokemonZA.html"><img src="assets/images/Poke.avif" alt=""></a>
+              <a href="Detalles-PokemonZA.jsp"><img src="assets/images/Poke.avif" alt=""></a>
               <span class="price"><em>$80</em> $60</span>
             </div>
             <div class="down-content">
               <span class="category">JRPG/RPG</span>
               <h4>Leyendas <br>
                 Pokémon: Z-A</h4>
-              <a href="Detalles-PokemonZA.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-PokemonZA.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -136,13 +136,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 fgc">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-StreetFighter6.html"><img src="assets/images/SF6.jpg" alt=""></a>
+              <a href="Detalles-StreetFighter6.jsp"><img src="assets/images/SF6.jpg" alt=""></a>
               <span class="price"><em>$60</em>$30</span>
             </div>
             <div class="down-content">
               <span class="category">Peleas</span>
               <h4>Street Fighter 6</h4>
-              <a href="Detalles-StreetFighter6.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-StreetFighter6.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -150,14 +150,14 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 adv">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Silso.html"><img src="assets/images/Silksong.avif" alt=""></a>
+              <a href="Detalles-Silso.jsp"><img src="assets/images/Silksong.avif" alt=""></a>
               <span class="price">$20</span>
             </div>
             <div class="down-content">
               <span class="category">Aventura/Indie</span>
               <h4>Hollow Knight: <br>
                 Silksong</h4>
-              <a href="Detalles-Silso.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-Silso.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -165,13 +165,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 str">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Persona5.html"><img src="assets/images/Persona5.jpg" alt=""></a>
+              <a href="Detalles-Persona5.jsp"><img src="assets/images/Persona5.jpg" alt=""></a>
               <span class="price"><em>$40</em>$30</span>
             </div>
             <div class="down-content">
               <span class="category">JRPG/RPG</span>
               <h4>Persona 5: Royal</h4>
-              <a href="Detalles-Persona5.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-Persona5.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -207,13 +207,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 fgc">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-MK1.html"><img src="assets/images/MK12.jpg" alt=""></a>
+              <a href="Detalles-MK1.jsp"><img src="assets/images/MK12.jpg" alt=""></a>
               <span class="price">$40</span>
             </div>
             <div class="down-content">
               <span class="category">Peleas</span>
               <h4>Mortal Kombat 1</h4>
-              <a href="Detalles-MK1.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-MK1.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -227,7 +227,7 @@
             <div class="down-content">
               <span class="category">Peleas</span>
               <h4>Skullgirls</h4>
-              <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="product-details.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -235,13 +235,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 str">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Persona3Reload.html"><img src="assets/images/Persona3Banner.jpg" alt=""></a>
+              <a href="Detalles-Persona3Reload.jsp"><img src="assets/images/Persona3Banner.jpg" alt=""></a>
               <span class="price"><em>$90</em>$30</span>
             </div>
             <div class="down-content">
               <span class="category">JRPG</span>
               <h4>Persona 3 Reload</h4>
-              <a href="Detalles-Persona3Reload.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-Persona3Reload.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -249,14 +249,14 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 rac">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-SRCrossworlds.html"><img src="assets/images/SonicRacingCrossworlds.webp" alt=""></a>
+              <a href="Detalles-SRCrossworlds.jsp"><img src="assets/images/SonicRacingCrossworlds.webp" alt=""></a>
               <span class="price">$70</span>
             </div>
             <div class="down-content">
               <span class="category">Carreras</span>
               <h4>Sonic Racing <br>
                 Crossworlds</h4>
-              <a href="Detalles-SRCrossworlds.html"><i class="fa fa-shopping-bag"></i></a>
+              <a href="Detalles-SRCrossworlds.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -274,8 +274,8 @@
           <ul class="pagination">
           <li><a href="#"> &lt; </a></li>
             <li><a class="is_active" href="#">1</a></li>
-            <li><a href="shop 2.html">2</a></li>
-            <li><a href="shop 2.html"> &gt; </a></li>
+            <li><a href="shop 2.jsp">2</a></li>
+            <li><a href="shop 2.jsp"> &gt; </a></li>
           </ul>
         </div>
       </div>
@@ -290,12 +290,11 @@
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/counter.js"></script>
-  <script src="assets/js/custom.js"></script>
-
+    <script src="${contextPath}/vendor/jquery/jquery.min.js"></script>
+    <script src="${contextPath}/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="${contextPath}/assets/js/isotope.min.js"></script>
+    <script src="${contextPath}/assets/js/owl-carousel.js"></script>
+    <script src="${contextPath}/assets/js/counter.js"></script>
+    <script src="${contextPath}/assets/js/custom.js"></script>
   </body>
 </html>
