@@ -49,7 +49,7 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="" style="width: 158px;">
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -227,7 +227,7 @@
             <div class="down-content">
               <span class="category">Peleas</span>
               <h4>Skullgirls</h4>
-              <a href="product-details.jsp"><i class="fa fa-shopping-bag"></i></a>
+              <a href="#"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -274,8 +274,8 @@
           <ul class="pagination">
           <li><a href="#"> &lt; </a></li>
             <li><a class="is_active" href="#">1</a></li>
-            <li><a href="shop 2.jsp">2</a></li>
-            <li><a href="shop 2.jsp"> &gt; </a></li>
+            <li><a href="shop2.jsp">2</a></li>
+            <li><a href="shop2.jsp"> &gt; </a></li>
           </ul>
         </div>
       </div>

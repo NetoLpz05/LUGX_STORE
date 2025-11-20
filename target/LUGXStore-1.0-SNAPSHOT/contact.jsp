@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Lugx Gaming Template - Contact Page</title>
+    <title>LUGX - Contactanos</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="" style="width: 158px;">
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -90,12 +90,12 @@
             <div class="section-heading">
               <h6>Contactanos</h6>
               <h2>Hola!</h2>
+              <p>Coloca tus datos y nos pondremos en contacto</p>
             </div>
-            <p>Coloca tus datos y nos pondremos en contacto</p>
             <ul>
-              <li><span>Address</span> Sunny Isles Beach, FL 33160, United States</li>
-              <li><span>Phone</span> +123 456 7890</li>
-              <li><span>Email</span> lugx@contact.com</li>
+              <li><span>Dirección</span> LUGX Inc., FL 33160, Estados Unidos</li>
+              <li><span>Teléfono</span> +52 662 347 9851</li>
+              <li><span>Correo Electrónico</span> lugx@contact.com</li>
             </ul>
           </div>
         </div>
@@ -153,7 +153,7 @@
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Copyright © 2048 LUGX Gaming Company. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
+        <p>Copyright © 2025 LUGX Gaming Company. Todos los derechos reservados. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank"></a></p>
       </div>
     </div>
   </footer>

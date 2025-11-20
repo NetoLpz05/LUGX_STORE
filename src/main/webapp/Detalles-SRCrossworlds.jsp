@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Detalles-ACShadows
-    Created on : 18 nov 2025, 7:36:52 p.m.
+    Document   : Detalles-SRCrossworlds
+    Created on : 20 nov 2025, 11:53:14 a.m.
     Author     : Usuario
 --%>
 
@@ -8,11 +8,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <title>Lugx Gaming - Assassin's Creed Shadows</title>
+    <title>Lugx Gaming - Sonic Racing Crossworlds</title>
     <link rel="icon" href="assets/images/logo.ico" type="image/x-icon">
 
     <!-- Bootstrap core CSS -->
@@ -48,16 +49,16 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.jsp" class="logo">
+                    <a href="index.html" class="logo">
                         <img src="assets/images/logo.png" alt="" style="width: 158px;">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="menu.jsp">Inicio</a></li>
-                      <li><a href="shop.jsp">Tienda</a></li>
-                      <li><a href="contact.jsp">Contactanos</a></li>
-                      <li><a href="index.jsp">Inicia Sesión</a></li>
+                      <li><a href="index.html">Inicio</a></li>
+                      <li><a href="shop.html">Tienda</a></li>
+                      <li><a href="contact.html">Contactanos</a></li>
+                      <li><a href="#">Inicia Sesión</a></li>
                   </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -74,8 +75,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3>Assassin's Creed Shadows</h3>
-          <span class="breadcrumb"><a href="inicio.jsp">Inicio</a>  >  <a href="shop.jsp">Tienda</a>  >  Assassin's Creed Shadows</span>
+          <h3>Sonic Racing Crossworlds</h3>
+          <span class="breadcrumb"><a href="#">Inicio</a>  >  <a href="#">Tienda</a>  >  Sonic Racing Crossworlds</span>
         </div>
       </div>
     </div>
@@ -86,13 +87,13 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="left-image">
-            <img src="assets/images/Assassins Creed Shadows.jpg" alt="">
+            <img src="assets/images/SonicRacingCrossworlds2.webp" alt="">
           </div>
         </div>
         <div class="col-lg-6 align-self-center">
-          <h4 style="font-size: medium;">Ubisoft / <a href="#">Ubisoft Quebec</a></h4>
-          <h4>Assassin's Creed Shadows</h4>
-          <span class="price"><em>$70</em> $60</span>
+          <h4 style="font-size: medium;">SEGA / <a href="#">Sonic Team</a></h4>
+          <h4>Sonic Racing Crossworlds</h4>
+          <span class="price">$70</span>
           <p>Pequeña descripcion del juego</p>
           <form id="qty" action="#">
             <input type="qty" class="form-control" id="1" aria-describedby="quantity" placeholder="1">
@@ -100,10 +101,10 @@
           </form>
           <ul>
             <li><span>Game ID:</span> ACS</li>
-            <li><span>Género:</span> <a href="#">Action</a>, <a href="#">Singleplayer</a></li>
+            <li><span>Género:</span> <a href="#">Carreras</a>, <a href="#">Singleplayer</a>, <a href="#">Multiplayer</a></li>
             <li><span>Multi-tags:</span> <a href="#">War</a>, <a href="#">Battle</a>, <a href="#">Royal</a></li>
           </ul>
-          <img src="assets/images/ACShadows.jpg" alt="" style="width: 100%; margin-top: 20px; border-radius: 10px; height: auto;">
+          <img src="assets/images/SonicRacingCrossworldsBanner.jpg" alt="" style="width: 100%; margin-top: 20px; border-radius: 10px; height: auto;">
         </div>
         <div class="col-lg-12">
           <div class="sep"></div>
@@ -205,5 +206,6 @@
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
+
   </body>
 </html>

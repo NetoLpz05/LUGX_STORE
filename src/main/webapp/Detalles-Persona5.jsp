@@ -48,7 +48,7 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="" style="width: 158px;">
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -75,7 +75,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h3>Persona 5: Royal</h3>
-          <span class="breadcrumb"><a href="index.html">Inicio</a>  >  <a href="shop.html">Tienda</a>  >  Persona 5: Royal</span>
+          <span class="breadcrumb"><a href="index.jsp">Inicio</a>  >  <a href="shop.jsp">Tienda</a>  >  Persona 5: Royal</span>
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@
           </div>
         </div>
         <div class="col-lg-6 align-self-center">
-          <h4 style="font-size: medium;">ATLUS / <a href="#">P-Studio</h4>
+          <h4 style="font-size: medium;">ATLUS / <a href="#">P-Studio</a></h4>
           <h4>Persona 5: Royal</h4>
           <span class="price"><em>$40</em> $30</span>
           <p>Persona 5 Royal es una versión ampliada del juego de rol Persona 5 que incluye nuevo contenido como personajes, confidentes, una historia extendida. Combina la vida diaria de un estudiante de secundaria con mazmorras de estilo psicodélico para luchar contra las sombras</p>
@@ -142,44 +142,46 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="section-heading">
-            <h6>JRPG</h6>
             <h2>Juegos Relacionados</h2>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="main-button">
-            <a href="shop.html">Ver Todo</a>
+            <a href="shop.jsp">Ver Todo</a>
           </div>
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
           <div class="item">
-            <h4>Top #1 Seller</h4>
             <div class="thumb">
-              <a href="Detalles-PokemonZA.html"><img src="assets/images/RecomendadosPokemon.avif" alt=""></a>
+              <a href="#"><img src="assets/images/categories-01.jpg" alt=""></a>
             </div>
           </div>
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
           <div class="item">
-            <h4>JGA 2024 Winner</h4>
             <div class="thumb">
-              <a href="#"><img src="assets/images/Persona3Reload.jpg" alt=""></a>
+              <a href="#"><img src="assets/images/categories-05.jpg" alt=""></a>
             </div>
           </div>
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
           <div class="item">
-            <h4>Mejor RPG de Switch</h4>
             <div class="thumb">
-              <a href="#"><img src="assets/images/Xenoblade3.jpg" alt=""></a>
+              <a href="#"><img src="assets/images/categories-03.jpg" alt=""></a>
             </div>
           </div>
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
           <div class="item">
-            <h4>RPG GOTY 2024</h4>
             <div class="thumb">
-              <a href="#"><img src="assets/images/MethaphorReFantazio.png" alt=""></a>
+              <a href="#"><img src="assets/images/categories-04.jpg" alt=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg col-sm-6 col-xs-12">
+          <div class="item">
+            <div class="thumb">
+              <a href="#"><img src="assets/images/categories-05.jpg" alt=""></a>
             </div>
           </div>
         </div>
@@ -190,7 +192,7 @@
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Copyright © 2048 LUGX Gaming Company. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
+        <p>Copyright © 2025 LUGX Gaming Company. Todos los derechos reservados. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
       </div>
     </div>
   </footer>

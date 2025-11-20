@@ -48,15 +48,15 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="" style="width: 158px;">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html">Inicio</a></li>
-                      <li><a href="shop.html">Tienda</a></li>
-                      <li><a href="contact.html">Contactanos</a></li>
+                      <li><a href="index.jsp">Inicio</a></li>
+                      <li><a href="shop.jsp">Tienda</a></li>
+                      <li><a href="contact.jsp">Contactanos</a></li>
                       <li><a href="#">Inicia Sesión</a></li>
                   </ul>   
                     <a class='menu-trigger'>
@@ -75,7 +75,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h3>Leyendas Pokémon: Z-A</h3>
-          <span class="breadcrumb"><a href="index.html">Inicio</a>  >  <a href="shop.html">Tienda</a>  >  Leyendas Pokémon: Z-A</span>
+          <span class="breadcrumb"><a href="index.jsp">Inicio</a>  >  <a href="shop.jsp">Tienda</a>  >  Leyendas Pokémon: Z-A</span>
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@
           </div>
         </div>
         <div class="col-lg-6 align-self-center">
-          <h4 style="font-size: medium;">Nintendo / <a href="#">Game Freak</h4>
+          <h4 style="font-size: medium;">Nintendo / <a href="#">Game Freak</a></h4>
           <h4>Leyendas Pokémon: Z-A</h4>
           <span class="price"><em>$80</em> $60</span>
           <p>Pokémon Legends: Z-A es un juego de rol de acción para Nintendo Switch y Nintendo Switch 2 que traslada la fórmula de la serie Leyendas Pokémon a un entorno urbano. El juego se desarrolla exclusivamente en Ciudad Luminalia, una metrópolis que está llevando a cabo un plan de reurbanización para crear un espacio ideal para humanos y Pokémon. La trama tiene lugar cinco años después de los eventos de Pokémon X/Y</p>
@@ -146,13 +146,12 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="section-heading">
-            <h6>JRPG</h6>
             <h2>Juegos Relacionados</h2>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="main-button">
-            <a href="shop.html">Ver Todo</a>
+            <a href="shop.jsp">Ver Todo</a>
           </div>
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
@@ -167,7 +166,7 @@
           <div class="item">
             <h4>JGA 2024 Winner</h4>
             <div class="thumb">
-              <a href="#"><img src="assets/images/Persona3Reload.jpg" alt=""></a>
+              <a href="Detalles-Persona3Reload.jsp"><img src="assets/images/Persona3Reload.jpg" alt=""></a>
             </div>
           </div>
         </div>
@@ -194,7 +193,7 @@
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Copyright © 2048 LUGX Gaming Company. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
+        <p>Copyright © 2025 LUGX Gaming Company. Todos los derechos reservados. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
       </div>
     </div>
   </footer>

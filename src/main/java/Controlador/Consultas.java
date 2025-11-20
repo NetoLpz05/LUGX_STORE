@@ -38,7 +38,7 @@ public class Consultas extends Conexion {
                 if (pst != null) {
                     pst.close();
                 }
-                // if(getConexion() != null) getConexion().close(); <-- LÍNEA ELIMINADA
+                // if(getConexion() != null) getConexion().close();
             } catch (Exception e) {
                 System.out.println("Error al cerrar recursos: " + e);
             }
@@ -46,31 +46,46 @@ public class Consultas extends Conexion {
         return false;
     }
 
-    public boolean registrar(String usuario, String clave, String correo, String tipo) {
+    public boolean registrar(String nombre, String password, String correo, String telefono, String direccion, String tipo) {
+        Connection con = null;
         PreparedStatement pst = null;
+        
+        String sql = "INSERT INTO usuario (nombre, correo, password, direccion, telefono, tipo_usuario) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
-            String consulta = "insert into usuario (nombre, correo, password, tipo_usuario) values (?, ?, ?, ?)";
-            pst = getConexion().prepareStatement(consulta);
-            pst.setString(1, usuario);
-            pst.setString(2, correo);
-            pst.setString(3, clave);
-            pst.setString(4, tipo);
+            // 2. Obtenemos la conexión UNA SOLA VEZ y la guardamos en la variable 'con'
+            con = getConexion(); 
+            
+            // Usamos 'con' para todo lo demás
+            pst = con.prepareStatement(sql);
 
-            if (pst.executeUpdate() == 1) {
+            pst.setString(1, nombre);
+            pst.setString(2, correo);
+            pst.setString(3, password);
+            pst.setString(4, telefono);
+            pst.setString(5, direccion);
+            pst.setString(6, tipo);
+
+            int filas = pst.executeUpdate();
+
+            if (filas > 0) {
+                // 3. Hacemos commit SOBRE LA MISMA CONEXIÓN que usó el PreparedStatement
+                con.commit(); 
                 return true;
             }
-
+            
         } catch (Exception e) {
-            System.out.println("Error en: " + e);
+            System.err.println("Error al registrar: " + e);
             try {
-                if (pst != null) {
-                    pst.close();
-                }
-                // if(getConexion() != null) getConexion().close();
-            } catch (SQLException ex) {
-                System.out.println("Error al cerrar recursos: " + e);
-            }
+                // Si falla, hacemos rollback sobre la conexión correcta
+                if (con != null) con.rollback(); 
+            } catch (SQLException ex) { }
+        } finally {
+            // 4. Cerramos recursos
+            try {
+                if (pst != null) pst.close();
+                if (con != null) con.close(); // Cerramos la conexión explícitamente
+            } catch (Exception e) { }
         }
         return false;
     }

@@ -366,7 +366,6 @@
                   <h6>Nuestra Tienda</h6>
                   <h2>Haz tu compra de pre-ordena y consigue los mejores <em>precios</em> para tí!</h2>
                 </div>
-                <p>Lorem ipsum dolor consectetur adipiscing, sed do eiusmod tempor incididunt.</p>
                 <div class="main-button">
                   <a href="shop.html">Compra Ahora!</a>
                 </div>
@@ -384,7 +383,7 @@
                 </div>
                 <div class="search-input">
                   <form id="subscribe" action="#">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu correo electrónico">
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu Correo">
                     <button type="submit">Suscríbete ahora!</button>
                   </form>
                 </div>

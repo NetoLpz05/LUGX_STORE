@@ -36,14 +36,15 @@ public class RegistrarUsuarios extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         String usuario = request.getParameter("usuario");
-        String correo = request.getParameter("correo"); // <--- Nuevo
+        String correo = request.getParameter("correo");
         String clave = request.getParameter("pass");
-        String tipo = "CLIENTE"; // <--- Definimos el valor por defecto para el ENUM
+        String telefono = request.getParameter("telefono");
+        String direccion = request.getParameter("direccion");
+        String tipo = "CLIENTE";
 
         Consultas sql = new Consultas();
 
-        // Ahora pasamos 4 variables en lugar de 2
-        if (sql.registrar(usuario, clave, correo, tipo)) {
+        if (sql.registrar(usuario, clave, correo, telefono, direccion, tipo)) {
             response.sendRedirect("index.jsp");
         } else {
             response.sendRedirect("registro.jsp");

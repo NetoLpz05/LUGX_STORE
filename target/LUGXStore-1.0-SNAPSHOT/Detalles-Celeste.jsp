@@ -55,7 +55,7 @@ https://templatemo.com/tm-589-lugx-gaming
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="" style="width: 158px;">
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -82,7 +82,7 @@ https://templatemo.com/tm-589-lugx-gaming
       <div class="row">
         <div class="col-lg-12">
           <h3>Celeste</h3>
-          <span class="breadcrumb"><a href="#">Inicio</a>  >  <a href="#">Tienda</a>  >  Celeste</span>
+          <span class="breadcrumb"><a href="inicio.jsp">Inicio</a>  >  <a href="shop2.jsp">Tienda</a>  >  Celeste</span>
         </div>
       </div>
     </div>
@@ -148,18 +148,16 @@ https://templatemo.com/tm-589-lugx-gaming
       <div class="row">
         <div class="col-lg-6">
           <div class="section-heading">
-            <h6>Action</h6>
-            <h2>Related Games</h2>
+            <h2>Juegos Relacionados</h2>
           </div>
         </div>
         <div class="col-lg-6">
           <div class="main-button">
-            <a href="shop.html">View All</a>
+            <a href="shop.jsp">Ver Todo</a>
           </div>
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
           <div class="item">
-            <h4>Action</h4>
             <div class="thumb">
               <a href="#"><img src="assets/images/categories-01.jpg" alt=""></a>
             </div>
@@ -167,7 +165,6 @@ https://templatemo.com/tm-589-lugx-gaming
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
           <div class="item">
-            <h4>Action</h4>
             <div class="thumb">
               <a href="#"><img src="assets/images/categories-05.jpg" alt=""></a>
             </div>
@@ -175,7 +172,6 @@ https://templatemo.com/tm-589-lugx-gaming
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
           <div class="item">
-            <h4>Action</h4>
             <div class="thumb">
               <a href="#"><img src="assets/images/categories-03.jpg" alt=""></a>
             </div>
@@ -183,7 +179,6 @@ https://templatemo.com/tm-589-lugx-gaming
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
           <div class="item">
-            <h4>Action</h4>
             <div class="thumb">
               <a href="#"><img src="assets/images/categories-04.jpg" alt=""></a>
             </div>
@@ -191,7 +186,6 @@ https://templatemo.com/tm-589-lugx-gaming
         </div>
         <div class="col-lg col-sm-6 col-xs-12">
           <div class="item">
-            <h4>Action</h4>
             <div class="thumb">
               <a href="#"><img src="assets/images/categories-05.jpg" alt=""></a>
             </div>
@@ -204,7 +198,7 @@ https://templatemo.com/tm-589-lugx-gaming
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Copyright © 2048 LUGX Gaming Company. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
+        <p>Copyright © 2025 LUGX Gaming Company. Todos los derechos reservados. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
       </div>
     </div>
   </footer>

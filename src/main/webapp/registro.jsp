@@ -122,6 +122,8 @@
                 <input type="text" name="usuario" placeholder="Nombre de usuario" required>
                 <input type="email" name="correo" placeholder="Correo electrónico" required>
                 <input type="password" name="pass" placeholder="Contraseña" required>
+                <input type="text" name="direccion" placeholder="Dirección" required><br>
+                <input type="text" name="telefono" placeholder="Teléfono" required><br>
                 <input type="submit" value="Registrar Usuario">
             </form>
             

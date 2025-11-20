@@ -49,7 +49,7 @@
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.jsp" class="logo">
                         <img src="assets/images/logo.png" alt="" style="width: 158px;">
                     </a>
                     <!-- ***** Logo End ***** -->
@@ -76,7 +76,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h3>Tienda</h3>
-          <span class="breadcrumb"><a href="index.html">Inicio</a> > Tienda</span>
+          <span class="breadcrumb"><a href="index.jsp">Inicio</a> > Tienda</span>
         </div>
       </div>
     </div>
@@ -127,8 +127,8 @@
   <div class="row">
         <div class="col-lg-12">
           <ul class="pagination">
-          <li><a href="shop.html"> &lt; </a></li>
-            <li><a href="shop.html">1</a></li>
+          <li><a href="shop.jsp"> &lt; </a></li>
+            <li><a href="shop.jsp">1</a></li>
             <li><a class="is_active"href="#">2</a></li>
             <li><a href="#"> &gt; </a></li>
           </ul>
