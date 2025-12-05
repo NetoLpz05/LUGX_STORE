@@ -53,10 +53,7 @@ public class Consultas extends Conexion {
         String sql = "INSERT INTO usuario (nombre, correo, password, direccion, telefono, tipo_usuario) VALUES (?, ?, ?, ?, ?, ?)";
 
         try {
-            // 2. Obtenemos la conexión UNA SOLA VEZ y la guardamos en la variable 'con'
             con = getConexion(); 
-            
-            // Usamos 'con' para todo lo demás
             pst = con.prepareStatement(sql);
 
             pst.setString(1, nombre);
@@ -69,7 +66,6 @@ public class Consultas extends Conexion {
             int filas = pst.executeUpdate();
 
             if (filas > 0) {
-                // 3. Hacemos commit SOBRE LA MISMA CONEXIÓN que usó el PreparedStatement
                 con.commit(); 
                 return true;
             }
@@ -77,14 +73,12 @@ public class Consultas extends Conexion {
         } catch (Exception e) {
             System.err.println("Error al registrar: " + e);
             try {
-                // Si falla, hacemos rollback sobre la conexión correcta
                 if (con != null) con.rollback(); 
             } catch (SQLException ex) { }
         } finally {
-            // 4. Cerramos recursos
             try {
                 if (pst != null) pst.close();
-                if (con != null) con.close(); // Cerramos la conexión explícitamente
+                if (con != null) con.close();
             } catch (Exception e) { }
         }
         return false;
@@ -111,7 +105,6 @@ public class Consultas extends Conexion {
         try {
             pst = getConexion().prepareStatement(sql);
             pst.setString(1, usuario);
-            
             rs = pst.executeQuery();
             
             if (rs.next()) {
