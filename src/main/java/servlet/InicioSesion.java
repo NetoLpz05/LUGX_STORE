@@ -49,28 +49,24 @@ public class InicioSesion extends HttpServlet {
                 
                 // 2. Configurar la sesión
                 HttpSession objSesion = request.getSession(true);
-                objSesion.setAttribute("nombre", usuario);
-                objSesion.setAttribute("esAdmin", esAdmin); // <-- GUARDAR EL ROL
                 
-                // 3. Redirección condicional
+                objSesion.setAttribute("usuarioLogueado", usuario);
+                
                 if (esAdmin) {
-                    // 🚀 Éxito y es ADMIN: Redirigir al controlador del panel
-                    // Usamos getContextPath() para la ruta absoluta y robusta
-                    response.sendRedirect(request.getContextPath() + "/JuegoServlet"); 
+                    objSesion.setAttribute("esAdmin", true);
+                    response.sendRedirect("JuegoServlet");
                 } else {
-                    // Éxito, pero es CLIENTE: Redirigir a la página de inicio normal
+                    objSesion.setAttribute("esAdmin", false);
                     response.sendRedirect("inicio.jsp");
                 }
-            } else {
-                // Autenticación fallida
-                // Opcional: Agregar mensaje de error
-                request.setAttribute("error", "Usuario o contraseña incorrectos.");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            }
+                } else {
+                    //Autenticación fallida
+                    request.setAttribute("mensajeError", "Usuario o contraseña incorrectos");
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                }
 
         } catch (SQLException e) {
             System.err.println("Error de SQL al autenticar o verificar rol: " + e);
-            // Manejo de error de BD, redirigir al login
             request.setAttribute("error", "Error del servidor. Intente más tarde.");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         } finally {

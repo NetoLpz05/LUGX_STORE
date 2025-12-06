@@ -15,4 +15,5 @@ servlet\InicioSesion.class
 com\mycompany\lugxstore\resources\JakartaEE10Resource.class
 Modelo\Videojuego.class
 Modelo\Articulo.class
+servlet\CerrarSesion.class
 Modelo\CarritoItem.class

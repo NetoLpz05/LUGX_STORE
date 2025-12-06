@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -58,8 +59,26 @@
                       <li><a href="inicio.jsp">Inicio</a></li>
                       <li><a href="shop.jsp">Tienda</a></li>
                       <li><a href="contact.jsp" class="active">Contactanos</a></li>
-                      <li><a href="index.jsp">Inicia Sesión</a></li>
-                  </ul>   
+                  
+                      <c:choose>
+                            <%-- CASO 1: Usuario ESTÁ logueado --%>
+                            <c:when test="${not empty sessionScope.usuarioLogueado}">
+                                <li class="user-dropdown">
+                                    <a href="#" style="color: white; background-color: #ee626b;
+                                       font-weight: bold; background-color: #ee626b;
+                                       border-radius: 50px; text-transform: uppercase;">
+                                        Hola, <c:out value="${sessionScope.usuarioLogueado}"/>
+                                    </a>
+                                </li class="dropdown-content">
+                                <li><a href="CerrarSesion">Salir</a></li>
+                            </c:when>
+
+                            <%-- CASO 2: Nadie logueado --%>
+                            <c:otherwise>
+                                <li><a href="index.jsp">Inicia Sesión</a></li>
+                            </c:otherwise>
+                        </c:choose>
+                    </ul>  
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>

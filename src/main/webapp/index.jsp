@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,6 +20,10 @@
                 --color-fondo: #f4f7f6; /* Gris claro para fondo */
                 --color-texto-oscuro: #333;
                 --color-borde: #ccc;
+                /* Nuevo color para error */
+                --color-error-bg: #f8d7da;
+                --color-error-txt: #721c24;
+                --color-error-borde: #f5c6cb;
             }
 
             /* Estilos generales del cuerpo */
@@ -49,6 +54,18 @@
                 color: var(--color-principal);
                 margin-bottom: 30px;
                 font-size: 28px;
+            }
+
+            /* --- Estilo de la Alerta de Error (NUEVO) --- */
+            .alerta-error {
+                background-color: var(--color-error-bg);
+                color: var(--color-error-txt);
+                border: 1px solid var(--color-error-borde);
+                padding: 10px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                font-size: 14px;
+                text-align: left; /* O center, como prefieras */
             }
 
             /* --- Estilos del Formulario --- */
@@ -115,6 +132,12 @@
     <body>
         <div class="login-container">
             <h1>Iniciar Sesión</h1>
+            
+            <c:if test="${not empty mensajeError}">
+                <div class="alerta-error">
+                    <strong>¡Error!</strong> <c:out value="${mensajeError}"/>
+                </div>
+            </c:if>
             <form action="iniciar" method="post">
                 <input type="text" name="usuario" placeholder="Correo o Nombre de Usuario" required>
                 <input type="password" name="pass" placeholder="Contraseña" required>
