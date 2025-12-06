@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -57,7 +58,32 @@
                       <li><a href="index.jsp">Inicio</a></li>
                       <li><a href="shop.jsp">Tienda</a></li>
                       <li><a href="contact.jsp">Contactanos</a></li>
-                      <li><a href="#">Inicia Sesión</a></li>
+                      
+                      <c:choose>
+                            <%-- CASO 1: Usuario ESTÁ logueado --%>
+                            <c:when test="${not empty sessionScope.usuarioLogueado}">
+                                <li class="user-dropdown">
+                                    <a href="Perfil.jsp" style="color: white; background-color: #ee626b;
+                                       font-weight: bold;
+                                       border-radius: 50px; text-transform: uppercase;">
+                                        Hola, <c:out value="${sessionScope.usuarioLogueado}"/>
+                                    </a>
+                                </li class="dropdown-content">
+                                <li><a href="CerrarSesion" style="color: white; background-color: #ee626b;
+                                       font-weight: bold;
+                                       border-radius: 50px; text-transform: uppercase;">Salir</a></li>
+                            </c:when>
+
+                            <%-- CASO 2: Nadie logueado --%>
+                            <c:otherwise>
+                                <li><a href="index.jsp">Inicia Sesión</a></li>
+                            </c:otherwise>
+                        </c:choose> 
+                        <li>
+                            <a href="cart.jsp" class="${pageContext.request.servletPath.endsWith('cart.jsp') ? 'active' : ''}">
+                                <i class="fa fa-shopping-bag"></i> Mi Carrito
+                            </a>
+                        </li>
                   </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -94,8 +120,10 @@
           <h4>Leyendas Pokémon: Z-A</h4>
           <span class="price"><em>$80</em> $60</span>
           <p>Pokémon Legends: Z-A es un juego de rol de acción para Nintendo Switch y Nintendo Switch 2 que traslada la fórmula de la serie Leyendas Pokémon a un entorno urbano. El juego se desarrolla exclusivamente en Ciudad Luminalia, una metrópolis que está llevando a cabo un plan de reurbanización para crear un espacio ideal para humanos y Pokémon. La trama tiene lugar cinco años después de los eventos de Pokémon X/Y</p>
-          <form id="qty" action="#">
-            <input type="qty" class="form-control" id="1" aria-describedby="quantity" placeholder="1">
+          <form id="qty" action="agregarproducto" method="POST">
+            <input type="hidden" name="id" value="1"> 
+            <input type="number" name="cantidad" value="1" min="1" class="form-control" id="1" 
+                   aria-describedby="quantity" placeholder="1">
             <button type="submit"><i class="fa fa-shopping-bag"></i> Añadir al carrito</button>
           </form>
           <ul>

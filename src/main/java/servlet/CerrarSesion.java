@@ -26,6 +26,8 @@ public class CerrarSesion extends HttpServlet {
         
         if (paginaAnterior != null && !paginaAnterior.isEmpty()) {
             response.sendRedirect(paginaAnterior);
+        } else {
+            response.sendRedirect("index.jsp");
         }
     }
 

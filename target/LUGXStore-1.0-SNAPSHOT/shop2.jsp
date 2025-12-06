@@ -57,27 +57,35 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                       <li><a href="inicio.jsp">Inicio</a></li>
-                      <li><a href="shop.jsp" class="active">Tienda</a></li>
+                      <li><a href="shop2.jsp" class="active">Tienda</a></li>
                       <li><a href="contact.jsp">Contactanos</a></li>
+                  
                       <c:choose>
                             <%-- CASO 1: Usuario ESTÁ logueado --%>
                             <c:when test="${not empty sessionScope.usuarioLogueado}">
                                 <li class="user-dropdown">
-                                    <a href="#" style="color: white; background-color: #ee626b;
-                                       font-weight: bold; background-color: #ee626b;
+                                    <a href="Perfil.jsp" style="color: white; background-color: #ee626b;
+                                       font-weight: bold;
                                        border-radius: 50px; text-transform: uppercase;">
                                         Hola, <c:out value="${sessionScope.usuarioLogueado}"/>
                                     </a>
                                 </li class="dropdown-content">
-                                <li><a href="CerrarSesion">Salir</a></li>
+                                <li><a href="CerrarSesion" style="color: white; background-color: #ee626b;
+                                       font-weight: bold;
+                                       border-radius: 50px; text-transform: uppercase;">Salir</a></li>
                             </c:when>
 
                             <%-- CASO 2: Nadie logueado --%>
                             <c:otherwise>
                                 <li><a href="index.jsp">Inicia Sesión</a></li>
                             </c:otherwise>
-                        </c:choose>
-                  </ul>   
+                        </c:choose> 
+                        <li>
+                            <a href="cart.jsp" class="${pageContext.request.servletPath.endsWith('cart.jsp') ? 'active' : ''}">
+                                <i class="fa fa-shopping-bag"></i> Mi Carrito
+                            </a>
+                        </li>
+                    </ul>      
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>

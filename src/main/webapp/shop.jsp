@@ -59,25 +59,33 @@
                       <li><a href="inicio.jsp">Inicio</a></li>
                       <li><a href="shop.jsp" class="active">Tienda</a></li>
                       <li><a href="contact.jsp">Contactanos</a></li>
+                  
                       <c:choose>
                             <%-- CASO 1: Usuario ESTÁ logueado --%>
                             <c:when test="${not empty sessionScope.usuarioLogueado}">
                                 <li class="user-dropdown">
-                                    <a href="#" style="color: white; background-color: #ee626b;
-                                       font-weight: bold; background-color: #ee626b;
+                                    <a href="Perfil.jsp" style="color: white; background-color: #ee626b;
+                                       font-weight: bold;
                                        border-radius: 50px; text-transform: uppercase;">
                                         Hola, <c:out value="${sessionScope.usuarioLogueado}"/>
                                     </a>
                                 </li class="dropdown-content">
-                                <li><a href="CerrarSesion">Salir</a></li>
+                                <li><a href="CerrarSesion" style="color: white; background-color: #ee626b;
+                                       font-weight: bold;
+                                       border-radius: 50px; text-transform: uppercase;">Salir</a></li>
                             </c:when>
 
                             <%-- CASO 2: Nadie logueado --%>
                             <c:otherwise>
                                 <li><a href="index.jsp">Inicia Sesión</a></li>
                             </c:otherwise>
-                        </c:choose>
-                  </ul>   
+                        </c:choose> 
+                        <li>
+                            <a href="cart.jsp" class="${pageContext.request.servletPath.endsWith('cart.jsp') ? 'active' : ''}">
+                                <i class="fa fa-shopping-bag"></i> Mi Carrito
+                            </a>
+                        </li>
+                    </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -124,14 +132,14 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 adv">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-ACShadows.jsp"><img src="assets/images/Assassins Creed Shadows.jpg" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/Assassins Creed Shadows.jpg" alt=""></a>
               <span class="price">$80</span>
             </div>
             <div class="down-content">
               <span class="category">Aventura</span>
               <h4>Assassin's Creed <br>
                 Shadows</h4>
-              <a href="Detalles-ACShadows.jsp"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -139,14 +147,14 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 str">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-PokemonZA.jsp"><img src="assets/images/Poke.avif" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/Poke.avif" alt=""></a>
               <span class="price"><em>$80</em> $60</span>
             </div>
             <div class="down-content">
               <span class="category">JRPG/RPG</span>
               <h4>Leyendas <br>
                 Pokémon: Z-A</h4>
-              <a href="Detalles-PokemonZA.jsp"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -154,13 +162,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 fgc">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-StreetFighter6.jsp"><img src="assets/images/SF6.jpg" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/SF6.jpg" alt=""></a>
               <span class="price"><em>$60</em>$30</span>
             </div>
             <div class="down-content">
               <span class="category">Peleas</span>
               <h4>Street Fighter 6</h4>
-              <a href="Detalles-StreetFighter6.jsp"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -168,14 +176,14 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 adv">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Silso.jsp"><img src="assets/images/Silksong.avif" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/Silksong.avif" alt=""></a>
               <span class="price">$20</span>
             </div>
             <div class="down-content">
               <span class="category">Aventura/Indie</span>
               <h4>Hollow Knight: <br>
                 Silksong</h4>
-              <a href="Detalles-Silso.jsp"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -183,13 +191,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 str">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Persona5.jsp"><img src="assets/images/Persona5.jpg" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/Persona5.jpg" alt=""></a>
               <span class="price"><em>$40</em>$30</span>
             </div>
             <div class="down-content">
               <span class="category">JRPG/RPG</span>
               <h4>Persona 5: Royal</h4>
-              <a href="Detalles-Persona5.jsp"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -211,13 +219,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 rac">
           <div class="item">
             <div class="thumb">
-              <a href="#"><img src="assets/images/MKW.webp" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/MKW.webp" alt=""></a>
               <span class="price"><em>$80</em>$70</span>
             </div>
             <div class="down-content">
               <span class="category">Carreras</span>
               <h4>Mario Kart World</h4>
-              <a href="#"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -225,13 +233,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 fgc">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-MK1.jsp"><img src="assets/images/MK12.jpg" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/MK12.jpg" alt=""></a>
               <span class="price">$40</span>
             </div>
             <div class="down-content">
               <span class="category">Peleas</span>
               <h4>Mortal Kombat 1</h4>
-              <a href="Detalles-MK1.jsp"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -239,13 +247,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 fgc">
           <div class="item">
             <div class="thumb">
-              <a href="#"><img src="assets/images/skullgirls.jpg" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/skullgirls.jpg" alt=""></a>
               <span class="price"><em>$28</em>$20</span>
             </div>
             <div class="down-content">
               <span class="category">Peleas</span>
               <h4>Skullgirls</h4>
-              <a href="#"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -253,13 +261,13 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 str">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-Persona3Reload.jsp"><img src="assets/images/Persona3Banner.jpg" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/Persona3Banner.jpg" alt=""></a>
               <span class="price"><em>$90</em>$30</span>
             </div>
             <div class="down-content">
               <span class="category">JRPG</span>
               <h4>Persona 3 Reload</h4>
-              <a href="Detalles-Persona3Reload.jsp"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>
@@ -267,14 +275,14 @@
         <div class="col-lg-3 col-md-6 align-self-center mb-30 trending-items col-md-6 rac">
           <div class="item">
             <div class="thumb">
-              <a href="Detalles-SRCrossworlds.jsp"><img src="assets/images/SonicRacingCrossworlds.webp" alt=""></a>
+              <a href="detalles.jsp"><img src="assets/images/SonicRacingCrossworlds.webp" alt=""></a>
               <span class="price">$70</span>
             </div>
             <div class="down-content">
               <span class="category">Carreras</span>
               <h4>Sonic Racing <br>
                 Crossworlds</h4>
-              <a href="Detalles-SRCrossworlds.jsp"><i class="fa fa-shopping-bag"></i></a>
+              <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
             </div>
           </div>
         </div>

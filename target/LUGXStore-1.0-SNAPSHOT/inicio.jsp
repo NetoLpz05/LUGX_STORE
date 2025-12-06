@@ -25,6 +25,89 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <style>
+        #search {
+            position: relative;
+        }
+
+        /* La caja de resultados flotante */
+        #resultadosBusqueda {
+            position: absolute;
+            top: 50px; /* Justo debajo del input */
+            left: 0;
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 9999;
+            overflow: hidden;
+            display: none; /* Oculto por defecto */
+        }
+
+        /* Lista limpia */
+        .search-results-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        /* Cada elemento de la lista */
+        .search-results-list li {
+            border-bottom: 1px solid #eee;
+        }
+
+        .search-results-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Enlaces */
+        .search-results-list a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .search-results-list a:hover {
+            background-color: #f0f8ff; /* Azul muy claro al pasar el mouse */
+        }
+
+        /* Imagen pequeña */
+        .search-results-list img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+
+        /* Info del juego */
+        .search-results-list .info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-results-list .name {
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .search-results-list .price {
+            font-size: 12px;
+            color: #ee626b; /* Rojo LUGX */
+            font-weight: 700;
+        }
+
+        .no-results {
+            padding: 15px;
+            color: #666;
+            font-style: italic;
+            font-size: 14px;
+        }
+    </style>
   </head>
     <div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
@@ -57,20 +140,27 @@
                             <%-- CASO 1: Usuario ESTÁ logueado --%>
                             <c:when test="${not empty sessionScope.usuarioLogueado}">
                                 <li class="user-dropdown">
-                                    <a href="#" style="color: white; background-color: #ee626b;
-                                       font-weight: bold; background-color: #ee626b;
+                                    <a href="Perfil.jsp" style="color: white; background-color: #ee626b;
+                                       font-weight: bold;
                                        border-radius: 50px; text-transform: uppercase;">
                                         Hola, <c:out value="${sessionScope.usuarioLogueado}"/>
                                     </a>
                                 </li class="dropdown-content">
-                                <li><a href="CerrarSesion">Salir</a></li>
+                                <li><a href="CerrarSesion" style="color: white; background-color: #ee626b;
+                                       font-weight: bold;
+                                       border-radius: 50px; text-transform: uppercase;">Salir</a></li>
                             </c:when>
 
                             <%-- CASO 2: Nadie logueado --%>
                             <c:otherwise>
                                 <li><a href="index.jsp">Inicia Sesión</a></li>
                             </c:otherwise>
-                        </c:choose>
+                        </c:choose>               
+                        <li>
+                            <a href="cart.jsp" class="${pageContext.request.servletPath.endsWith('cart.jsp') ? 'active' : ''}">
+                                <i class="fa fa-shopping-bag"></i> Mi Carrito
+                            </a>
+                        </li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -90,12 +180,16 @@
           <div class="caption header-text">
             <h6>Bienvenido a lugx</h6>
             <h2>LA MEJOR TIENDA DE VIDEOJUEGOS!</h2>
-            <p>Somos una tienda jaja</p>
+            <p>Explora un universo de entretenimiento <strong>sin límites!</strong> Desde los RPGs más inmersivos 
+                hasta la acción frenética de los shooters competitivos, tenemos el catálogo definitivo 
+                para llevar tu experiencia de juego al <strong>siguiente nivel</strong>. ¿Estás listo para jugar?</p>
             <div class="search-input">
-              <form id="search" action="#">
-                <input type="text" placeholder="Escribe algo" id='searchText' name="searchKeyword" onkeypress="handle" />
-                <button role="button">Busca Ahora</button>
-              </form>
+                <form id="search" action="#" onsubmit="return false;"> <input type="text" 
+                                placeholder="Busca tu juego favorito (ej. Pokémon)" id="searchText" 
+                                name="searchKeyword" autocomplete="off" />
+                    <button role="button">Buscar</button>
+                    <div id="resultadosBusqueda"></div>
+                </form>
             </div>
           </div>
         </div>
@@ -168,7 +262,7 @@
         </div>
         <div class="col-lg-6">
           <div class="main-button">
-            <a href="shop.html">Ver Todo</a>
+            <a href="shop.jsp">Ver Todo</a>
           </div>
         </div>
 
@@ -236,144 +330,6 @@
     </div>
   </div>
 
-  <div class="section most-played">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="section-heading">
-            <h6>JUEGOS TOP</h6>
-            <h2>Más Jugados</h2>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="main-button">
-            <a href="shop.jsp">Ver Todo</a>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-6">
-          <div class="item">
-            <div class="thumb">
-              <a href="product-details.jsp"><img src="assets/images/top-game-01.jpg" alt=""></a>
-            </div>
-            <div class="down-content">
-                <h4>Warframe: Veilbreaker</h4>
-                <a href="#">Explorar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-6">
-          <div class="item">
-            <div class="thumb">
-              <a href="product-details.jsp"><img src="assets/images/top-game-02.jpg" alt=""></a>
-            </div>
-            <div class="down-content">
-                <h4>PUBG: Battlegrounds</h4>
-                <a href="#">Explorar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-6">
-          <div class="item">
-            <div class="thumb">
-              <a href="product-details.jsp"><img src="assets/images/top-game-03.jpg" alt=""></a>
-            </div>
-            <div class="down-content">
-                <h4>APEX Legends</h4>
-                <a href="#">Explorar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-6">
-          <div class="item">
-            <div class="thumb">
-              <a href="product-details.jsp"><img src="assets/images/top-game-04.jpg" alt=""></a>
-            </div>
-            <div class="down-content">
-                <h4>Los Sims 4</h4>
-                <a href="#">Explorar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-6">
-          <div class="item">
-            <div class="thumb">
-              <a href="product-details.jsp"><img src="assets/images/top-game-05.jpg" alt=""></a>
-            </div>
-            <div class="down-content">
-                <h4>Lost Ark</h4>
-                <a href="#">Explorar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-2 col-md-6 col-sm-6">
-          <div class="item">
-            <div class="thumb">
-              <a href="product-details.jsp"><img src="assets/images/top-game-06.jpg" alt=""></a>
-            </div>
-            <div class="down-content">
-              <!-- <span class="category">Adventure</span> -->
-                <h4>Destiny 2</h4>
-                <a href="#">Explorar</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section categories">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <div class="section-heading">
-            <h6>Categorías</h6>
-            <h2>Categorías más jugadas!</h2>
-          </div>
-        </div>
-        <div class="col-lg col-sm-6 col-xs-12">
-          <div class="item">
-            <h4>Acción</h4>
-            <div class="thumb">
-              <a href="#"><img src="assets/images/categories-01.jpg" alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg col-sm-6 col-xs-12">
-          <div class="item">
-            <h4>Pelea</h4>
-            <div class="thumb">
-              <a href="#"><img src="assets/images/categories-05.jpg" alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg col-sm-6 col-xs-12">
-          <div class="item">
-            <h4>JRPG</h4>
-            <div class="thumb">
-              <a href="#"><img src="assets/images/categories-03.jpg" alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg col-sm-6 col-xs-12">
-          <div class="item">
-            <h4>Carreras</h4>
-            <div class="thumb">
-              <a href="#"><img src="assets/images/categories-04.jpg" alt=""></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg col-sm-6 col-xs-12">
-          <div class="item">
-            <h4>Familiar</h4>
-            <div class="thumb">
-              <a href="#"><img src="assets/images/categories-05.jpg" alt=""></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
   <div class="section cta">
     <div class="container">
       <div class="row">
@@ -386,7 +342,7 @@
                   <h2>Haz tu compra de pre-ordena y consigue los mejores <em>precios</em> para tí!</h2>
                 </div>
                 <div class="main-button">
-                  <a href="shop.html">Compra Ahora!</a>
+                  <a href="shop.jsp">Compra Ahora!</a>
                 </div>
               </div>
             </div>
@@ -422,12 +378,56 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/counter.js"></script>
-  <script src="assets/js/custom.js"></script>
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/counter.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        // Esperar a que el HTML cargue completamente
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const inputBusqueda = document.getElementById("searchText");
+            const divResultados = document.getElementById("resultadosBusqueda");
+
+            // Escuchar cuando el usuario suelta una tecla
+            inputBusqueda.addEventListener("keyup", function() {
+                let texto = this.value.trim();
+
+                // Si el campo está vacío, ocultamos la caja
+                if (texto === "") {
+                    divResultados.style.display = "none";
+                    return;
+                }
+
+                fetch("buscarTiempoReal?q=" + encodeURIComponent(texto))
+                    .then(response => {
+                        if (response.ok) {
+                            return response.text(); // Convertimos la respuesta del Servlet a texto HTML
+                        }
+                        throw new Error("Error en la red");
+                    })
+                    .then(html => {
+                        // Ponemos el HTML recibido dentro del div y lo mostramos
+                        divResultados.innerHTML = html;
+                        divResultados.style.display = "block";
+                    })
+                    .catch(error => {
+                        console.error("Hubo un problema con la búsqueda:", error);
+                    });
+            });
+
+            // Ocultar resultados si haces clic fuera del buscador
+            document.addEventListener("click", function(event) {
+                const formulario = document.getElementById("search");
+                // Si el clic NO fue dentro del formulario, oculta los resultados
+                if (!formulario.contains(event.target)) {
+                    divResultados.style.display = "none";
+                }
+            });
+        });
+    </script>
   </body>
 </html>

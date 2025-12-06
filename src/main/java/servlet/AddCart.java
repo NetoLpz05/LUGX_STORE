@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package servlet;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import Modelo.Articulo;
+import Modelo.Videojuego;
+import Modelo.VideojuegoDAO;
+import java.io.IOException;
 import java.util.ArrayList;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -33,30 +30,39 @@ public class AddCart extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        
+        // 1. Recibir ID y Cantidad
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
-        int idproducto = Integer.parseInt(request.getParameter("cantidad"));
+        int idproducto = Integer.parseInt(request.getParameter("id"));
         
-        HttpSession sesion = request.getSession(true);
-        ArrayList<Articulo> articulos = sesion.getAttribute("carrito") == null ? new ArrayList<>() : (ArrayList) sesion.getAttribute("carrito");
+        // 2. BUSCAR EL JUEGO COMPLETO (Esto es necesario para el nuevo Articulo)
+        VideojuegoDAO dao = new VideojuegoDAO();
+        Videojuego juego = dao.obtenerPorId(idproducto);
         
-        boolean flag = false;        
-        if(articulos.size() > 0){
-            for(Articulo a : articulos){
-                if(idproducto == a.getIdProducto()){
+        if (juego != null) {
+            HttpSession sesion = request.getSession(true);
+            ArrayList<Articulo> carrito = (ArrayList<Articulo>) sesion.getAttribute("carrito");
+            
+            if (carrito == null) {
+                carrito = new ArrayList<>();
+            }
+            
+            boolean existe = false;
+            for (Articulo a : carrito) {
+                if (a.getVideojuego().getIdJuego() == idproducto) {
                     a.setCantidad(a.getCantidad() + cantidad);
-                    flag = true;
+                    existe = true;
                     break;
                 }
             }
+            
+            if (!existe) {
+                carrito.add(new Articulo(juego, cantidad)); 
+            }
+            sesion.setAttribute("carrito", carrito);
         }
-        
-        if(!flag){
-            articulos.add(new Articulo(idproducto, cantidad));
-        } 
-        sesion.setAttribute("carrito", articulos);  
         response.sendRedirect("cart.jsp");
-        }
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

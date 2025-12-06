@@ -11,6 +11,7 @@ servlet\AddCart.class
 Enum\tipoUsuario.class
 Modelo\UsuarioDAO.class
 Controlador\ControladorProducto.class
+servlet\Buscador.class
 servlet\InicioSesion.class
 com\mycompany\lugxstore\resources\JakartaEE10Resource.class
 Modelo\Videojuego.class

@@ -24,6 +24,8 @@ public class VideojuegoDAO {
             "UPDATE videojuego SET nombre=?, genero=?, precio=?, stock=?, descripcion=?, imagen=?, plataforma=? WHERE idJuego = ?";
     private static final String ELIMINAR_X_ID = 
             "DELETE FROM videojuego WHERE idJuego = ?";
+    private static final String BUSCAR_X_NOMBRE = 
+            "SELECT * FROM videojuego WHERE nombre LIKE ? LIMIT 5";
     
     /**
      * Método auxiliar para mapear un ResultSet a un objeto Juego
@@ -154,5 +156,33 @@ public class VideojuegoDAO {
             e.printStackTrace();
         }
         return filasAfectadas > 0;
+    }
+    
+    public List<Videojuego> buscarPorNombre(String texto) {
+        List<Videojuego> lista = new ArrayList<>();
+
+        try (Connection con = new Conexion().getConexion();
+             PreparedStatement ps = con.prepareStatement(BUSCAR_X_NOMBRE)) {
+
+            ps.setString(1, "%" + texto + "%");
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Videojuego v = new Videojuego();
+                    v.setIdJuego(rs.getInt("idJuego"));
+                    v.setNombre(rs.getString("nombre"));
+                    v.setImagen(rs.getString("imagen"));
+                    v.setPrecio(rs.getDouble("precio"));
+                    v.setImagenDetalles(rs.getString("imagenDetalles"));
+                    lista.add(v);
+                }
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error en búsqueda por nombre: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return lista;
     }
 }

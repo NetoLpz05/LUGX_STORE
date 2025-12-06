@@ -11,7 +11,8 @@ public class Videojuego {
     private double precio;
     private int stock;
     private String descripcion;
-    private String imagen; //URL o ruta de la imagen
+    private String imagen;
+    private String imagenDetalles;
     private String plataforma;
 
     public Videojuego() {
@@ -25,6 +26,18 @@ public class Videojuego {
         this.stock = stock;
         this.descripcion = descripcion;
         this.imagen = imagen;
+        this.plataforma = plataforma;
+    }
+
+    public Videojuego(int idJuego, String nombre, String genero, double precio, int stock, String descripcion, String imagen, String imagenDetalles, String plataforma) {
+        this.idJuego = idJuego;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.precio = precio;
+        this.stock = stock;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.imagenDetalles = imagenDetalles;
         this.plataforma = plataforma;
     }
 
@@ -59,6 +72,10 @@ public class Videojuego {
     public String getPlataforma() {
         return plataforma;
     }
+    
+    public String getImagenDetalles() {
+        return imagenDetalles;
+    }
 
     public void setIdJuego(int idJuego) {
         this.idJuego = idJuego;
@@ -91,9 +108,13 @@ public class Videojuego {
     public void setPlataforma(String plataforma) {
         this.plataforma = plataforma;
     }
+    
+    public void setImagenDetalles(String imagenDetalles) {
+        this.imagenDetalles = imagenDetalles;
+    }
 
     @Override
     public String toString() {
-        return "Videojuego{" + "idJuego=" + idJuego + ", nombre=" + nombre + ", genero=" + genero + ", precio=" + precio + ", stock=" + stock + ", descripcion=" + descripcion + ", imagen=" + imagen + ", plataforma=" + plataforma + '}';
-    }  
+        return "Videojuego{" + "idJuego=" + idJuego + ", nombre=" + nombre + ", genero=" + genero + ", precio=" + precio + ", stock=" + stock + ", descripcion=" + descripcion + ", imagen=" + imagen + ", imagenDetalles=" + imagenDetalles + ", plataforma=" + plataforma + '}';
+    }
 }
