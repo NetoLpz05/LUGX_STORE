@@ -15,13 +15,13 @@ import java.util.List;
 public class VideojuegoDAO {
 
     private static final String INSERTAR = 
-        "INSERT INTO videojuego (nombre, genero, precio, stock, descripcion, imagen, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        "INSERT INTO videojuego (nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String SELECCIONAR_TODO = 
-            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, plataforma FROM videojuego";
+            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma FROM videojuego";
     private static final String SELECCIONAR_X_ID = 
-            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, plataforma FROM videojuego WHERE idJuego = ?";
+            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma FROM videojuego WHERE idJuego = ?";
     private static final String ACTUALIZAR = 
-            "UPDATE videojuego SET nombre=?, genero=?, precio=?, stock=?, descripcion=?, imagen=?, plataforma=? WHERE idJuego = ?";
+            "UPDATE videojuego SET nombre=?, genero=?, precio=?, stock=?, descripcion=?, imagen=?, imagenDetalles=?, plataforma=? WHERE idJuego = ?";
     private static final String ELIMINAR_X_ID = 
             "DELETE FROM videojuego WHERE idJuego = ?";
     private static final String BUSCAR_X_NOMBRE = 
@@ -38,9 +38,10 @@ public class VideojuegoDAO {
         int stock = rs.getInt("stock");
         String descripcion = rs.getString("descripcion");
         String imagen = rs.getString("imagen");
+        String imagenDetalles = rs.getString("imagenDetalles");
         String plataforma = rs.getString("plataforma");
         
-        return new Videojuego(idJuego, nombre, genero, precio, stock, descripcion, imagen, plataforma);
+        return new Videojuego(idJuego, nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma);
     }
     
     // 1. READ: Obtener todos los juegos
@@ -94,8 +95,9 @@ public class VideojuegoDAO {
             ps.setInt(4, juego.getStock());
             ps.setString(5, juego.getDescripcion());
             ps.setString(6, juego.getImagen());
-            ps.setString(7, juego.getPlataforma());
-            
+            ps.setString(7, juego.getImagenDetalles());
+            ps.setString(8, juego.getPlataforma());
+
             filasAfectadas = ps.executeUpdate();
             
             if (filasAfectadas > 0) {
@@ -121,8 +123,9 @@ public class VideojuegoDAO {
             ps.setInt(4, juego.getStock());
             ps.setString(5, juego.getDescripcion());
             ps.setString(6, juego.getImagen());
-            ps.setString(7, juego.getPlataforma());
-            ps.setInt(8, juego.getIdJuego());
+            ps.setString(7, juego.getImagenDetalles());
+            ps.setString(8, juego.getPlataforma());
+            ps.setInt(9, juego.getIdJuego());
             
             filasAfectadas = ps.executeUpdate();
             
