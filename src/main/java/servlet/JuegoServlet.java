@@ -305,7 +305,8 @@ public class JuegoServlet extends HttpServlet {
         
         String imagen = request.getParameter("imagen");
         String descripcion = request.getParameter("descripcion");
+        String imagenDetalles = request.getParameter("imagenDetalles");
         
-        return new Videojuego(0, nombre, genero, precio, stock, descripcion, imagen, plataforma);
+        return new Videojuego(0, nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma);
     }
 }
