@@ -57,7 +57,7 @@
                             <!-- ***** Menu Start ***** -->
                             <ul class="nav">
                                 <li><a href="inicio.jsp">Inicio</a></li>
-                                <li><a href="shop.jsp" class="active">Tienda</a></li>
+                                <li><a href="JuegoServlet?accion=juegosTienda" class="active">Tienda</a></li>
                                 <li><a href="contact.jsp">Contactanos</a></li>
 
                                 <c:choose>
@@ -142,7 +142,7 @@
                                 <div class="down-content">
                                     <span class="category">${juego.genero}</span>
                                     <h4> ${juego.nombre} </h4>
-                                    <a href="cart.jsp"><i class="fa fa-shopping-bag"></i></a>
+                                    <a href="detalles.jsp?id=${juego.idJuego}"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
                         </div>  
@@ -151,17 +151,6 @@
                     <c:if test="${empty listaVideojuegos}">
                         <p>no hay nada</p>
                     </c:if>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="pagination">
-                        <li><a href="#"> &lt; </a></li>
-                        <li><a class="is_active" href="#">1</a></li>
-                        <li><a href="shop2.jsp">2</a></li>
-                        <li><a href="shop2.jsp"> &gt; </a></li>
-                    </ul>
                 </div>
             </div>
 
