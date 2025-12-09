@@ -15,7 +15,7 @@ import java.util.List;
 public class VideojuegoDAO {
 
     private static final String INSERTAR = 
-        "INSERT INTO videojuego (nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        "INSERT INTO videojuego (nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String SELECCIONAR_TODO = 
             "SELECT * FROM videojuego";
     private static final String SELECCIONAR_DISPONIBLES = 

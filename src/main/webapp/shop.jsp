@@ -118,13 +118,16 @@
                         <a href="#!" data-filter=".Aventura">Aventura</a>
                     </li>
                     <li>
-                        <a href="#!" data-filter=".Rpg">JRPG/RPG</a>
+                        <a href="#!" data-filter=".RPG">JRPG/RPG</a>
                     </li>
                     <li>
                         <a href="#!" data-filter=".Carreras">Carreras</a>
                     </li>
                     <li>
                         <a href="#!" data-filter=".Peleas">Peleas</a>
+                    </li>
+                    <li>
+                        <a href="#!" data-filter=".Indie">Indie</a>
                     </li>
                 </ul>
 
@@ -165,7 +168,7 @@
             <footer>
                 <div class="container">
                     <div class="col-lg-12">
-                        <p>Copyright © 2048 LUGX Gaming Company. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
+                        <p>Copyright © 2025 LUGX Gaming Company. Todos los derechos reservados. &nbsp;&nbsp;</p>
                     </div>
                 </div>
             </footer>

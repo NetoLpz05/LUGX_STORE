@@ -15,12 +15,10 @@
     Videojuego juego = null;
     
     try {
-        // 1. Obtenemos el ID de la URL (ej: detalles.jsp?id=5)
         String idStr = request.getParameter("id");
         if(idStr != null && !idStr.isEmpty()) {
             id = Integer.parseInt(idStr);
             
-            // 2. Buscamos el juego en la BD
             VideojuegoDAO dao = new VideojuegoDAO();
             juego = dao.obtenerPorId(id);
         }
@@ -28,7 +26,6 @@
         System.out.println("Error al cargar detalles: " + e);
     }
     
-    // 3. Seguridad: Si el ID no existe o es inválido, regresamos a la tienda
     if(juego == null) {
         response.sendRedirect("JuegoServlet?accion=juegosTienda");
         return;
