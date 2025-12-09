@@ -13,7 +13,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Carrito de Compras | LUGX Gaming</title>
+    <title>LUGX Gaming - Mi Carrito</title>
     <link rel="icon" href="assets/images/logo.ico" type="image/x-icon">
 
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

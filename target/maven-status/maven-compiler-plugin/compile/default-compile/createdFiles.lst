@@ -1,4 +1,5 @@
 Controlador\Consultas.class
+servlet\ActualizarPerfilServlet.class
 com\mycompany\lugxstore\JakartaRestConfiguration.class
 Modelo\ModeloProducto.class
 Modelo\Usuario.class

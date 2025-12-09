@@ -17,6 +17,7 @@ public class UsuarioDAO {
     private static final String SELECT_ALL = "SELECT * FROM usuario";
     private static final String DELETE = "DELETE FROM usuario WHERE idUsuario = ?";
     private static final String SELECCIONAR_X_ID = "SELECT * FROM usuario WHERE idUsuario = ?";
+    private static final String UPDATE = "UPDATE usuario SET nombre = ?, direccion = ?, telefono = ?, password = ? WHERE correo = ?";
     
     public List<Usuario> listarUsuarios() {
         List<Usuario> lista = new ArrayList<>();
@@ -99,5 +100,32 @@ public class UsuarioDAO {
             System.err.println("Error al eliminar usuario: " + e);
             return false;
         }
+    }
+    
+    public boolean actualizarUsuario(Usuario u) {
+        boolean flag = false;
+        
+        try (Connection con = new Conexion().getConexion();
+             PreparedStatement pst = con.prepareStatement(UPDATE)) {
+
+            // Asignación de parámetros en ORDEN (1, 2, 3, 4, 5)
+            pst.setString(1, u.getNombre());
+            pst.setString(2, u.getDireccion());
+            pst.setString(3, u.getTelefono());
+            pst.setString(4, u.getPassword());
+            pst.setString(5, u.getCorreo());
+
+            int filasAfectadas = pst.executeUpdate();
+
+            if(filasAfectadas > 0){
+                flag = true;
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar usuario: " + e);
+            e.printStackTrace();
+        } 
+        
+        return flag;
     }
 }
