@@ -14,10 +14,16 @@ import java.util.List;
  * @author Usuario
  */
 public class UsuarioDAO {
-    private static final String SELECT_ALL = "SELECT * FROM usuario";
-    private static final String DELETE = "DELETE FROM usuario WHERE idUsuario = ?";
-    private static final String SELECCIONAR_X_ID = "SELECT * FROM usuario WHERE idUsuario = ?";
-    private static final String UPDATE = "UPDATE usuario SET nombre = ?, direccion = ?, telefono = ?, password = ? WHERE correo = ?";
+    private static final String SELECT_ALL = 
+            "SELECT * FROM usuario";
+    private static final String DELETE = 
+            "DELETE FROM usuario WHERE idUsuario = ?";
+    private static final String SELECCIONAR_X_ID = 
+            "SELECT * FROM usuario WHERE idUsuario = ?";
+    private static final String UPDATE = 
+            "UPDATE usuario SET nombre = ?, direccion = ?, telefono = ?, password = ? WHERE correo = ?";
+    private static final String OBTENER_X_CORREO =
+            "SELECT * FROM usuario WHERE correo = ?";
     
     public List<Usuario> listarUsuarios() {
         List<Usuario> lista = new ArrayList<>();
@@ -127,5 +133,36 @@ public class UsuarioDAO {
         } 
         
         return flag;
+    }
+    
+    public Usuario obtenerPorCorreo(String correo) {
+        Usuario u = null;
+
+        try (Connection con = new Conexion().getConexion();
+             PreparedStatement ps = con.prepareStatement(OBTENER_X_CORREO)) {
+
+            ps.setString(1, correo);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    u = new Usuario();
+                    u.setIdUsuario(rs.getInt("idUsuario"));
+                    u.setNombre(rs.getString("nombre"));
+                    u.setCorreo(rs.getString("correo"));
+                    u.setPassword(rs.getString("password"));
+                    u.setDireccion(rs.getString("direccion"));
+                    u.setTelefono(rs.getString("telefono"));
+                    String rolString = rs.getString("tipo_usuario");
+                    if (rolString != null) {
+                        try {
+                            u.setRol(tipoUsuario.valueOf(rolString.toUpperCase()));
+                        } catch (Exception e) {}
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            System.err.println("Error al obtener usuario por correo: " + e);
+        }
+        return u;
     }
 }

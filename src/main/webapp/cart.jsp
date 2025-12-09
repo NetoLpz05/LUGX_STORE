@@ -210,7 +210,7 @@
                                             Ve a la tienda y equípate con los mejores títulos.
                                         </p>
 
-                                        <a href="shop.jsp" class="btn-lugx btn-pagar" style="width: 200px; margin: 20px auto;">
+                                        <a href="JuegoServlet?accion=juegosTienda" class="btn-lugx btn-pagar" style="width: 200px; margin: 20px auto;">
                                             Ir a la Tienda
                                         </a>
                                     </td>
@@ -235,7 +235,7 @@
                         
                         <span class="total-price">$<c:out value="${totalPagar}"/></span>
                         
-                        <a href="checkout.jsp" class="btn-lugx btn-pagar">Pagar Ahora</a>
+                        <a href="compra_exito.jsp" class="btn-lugx btn-pagar">Pagar Ahora</a>
                         <a href="JuegoServlet?accion=juegosTienda" class="btn-lugx btn-seguir">Seguir Comprando</a>
                     </div>
                 </div>

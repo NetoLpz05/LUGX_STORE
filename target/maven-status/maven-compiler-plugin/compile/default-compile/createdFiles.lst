@@ -19,3 +19,4 @@ Modelo\Videojuego.class
 Modelo\Articulo.class
 servlet\CerrarSesion.class
 Modelo\CarritoItem.class
+servlet\ProcesarCompraServlet.class

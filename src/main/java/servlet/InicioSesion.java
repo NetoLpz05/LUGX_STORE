@@ -5,6 +5,8 @@
 package servlet;
 
 import Controlador.Consultas;
+import Modelo.Usuario;
+import Modelo.UsuarioDAO;
 import java.io.IOException;
 import java.sql.SQLException;
 import jakarta.servlet.ServletException;
@@ -50,7 +52,11 @@ public class InicioSesion extends HttpServlet {
                 // 2. Configurar la sesión
                 HttpSession objSesion = request.getSession(true);
                 
-                objSesion.setAttribute("usuarioLogueado", usuario);
+                UsuarioDAO dao = new UsuarioDAO();
+                Usuario u = dao.obtenerPorCorreo(usuario);
+
+                objSesion.setAttribute("usuarioLogueado", usuario); 
+                objSesion.setAttribute("usuarioObj", u);            
                 
                 if (esAdmin) {
                     objSesion.setAttribute("esAdmin", true);
