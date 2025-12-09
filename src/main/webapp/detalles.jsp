@@ -30,7 +30,7 @@
     
     // 3. Seguridad: Si el ID no existe o es inválido, regresamos a la tienda
     if(juego == null) {
-        response.sendRedirect("shop.jsp");
+        response.sendRedirect("JuegoServlet?accion=juegosTienda");
         return;
     }
 %>
@@ -91,7 +91,7 @@
                                        border-radius: 50px; text-transform: uppercase;">
                                         Hola, <c:out value="${sessionScope.usuarioLogueado}"/>
                                     </a>
-                                </li class="dropdown-content">
+                                </li>
                                 <li><a href="CerrarSesion" style="color: white; background-color: #ee626b;
                                        font-weight: bold;
                                        border-radius: 50px; text-transform: uppercase;">Salir</a></li>

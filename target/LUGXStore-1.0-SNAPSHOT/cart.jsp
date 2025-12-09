@@ -236,7 +236,7 @@
                         <span class="total-price">$<c:out value="${totalPagar}"/></span>
                         
                         <a href="checkout.jsp" class="btn-lugx btn-pagar">Pagar Ahora</a>
-                        <a href="shop.jsp" class="btn-lugx btn-seguir">Seguir Comprando</a>
+                        <a href="JuegoServlet?accion=juegosTienda" class="btn-lugx btn-seguir">Seguir Comprando</a>
                     </div>
                 </div>
             </div>

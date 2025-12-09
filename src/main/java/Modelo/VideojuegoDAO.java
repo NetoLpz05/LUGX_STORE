@@ -17,9 +17,11 @@ public class VideojuegoDAO {
     private static final String INSERTAR = 
         "INSERT INTO videojuego (nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma) VALUES (?, ?, ?, ?, ?, ?, ?)";
     private static final String SELECCIONAR_TODO = 
-            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma FROM videojuego";
+            "SELECT * FROM videojuego";
+    private static final String SELECCIONAR_DISPONIBLES = 
+            "SELECT * FROM videojuego WHERE stock > 0";
     private static final String SELECCIONAR_X_ID = 
-            "SELECT idJuego, nombre, genero, precio, stock, descripcion, imagen, imagenDetalles, plataforma FROM videojuego WHERE idJuego = ?";
+            "SELECT * FROM videojuego WHERE idJuego = ?";
     private static final String ACTUALIZAR = 
             "UPDATE videojuego SET nombre=?, genero=?, precio=?, stock=?, descripcion=?, imagen=?, imagenDetalles=?, plataforma=? WHERE idJuego = ?";
     private static final String ELIMINAR_X_ID = 
@@ -186,6 +188,24 @@ public class VideojuegoDAO {
             e.printStackTrace();
         }
 
+        return lista;
+    }
+    
+    public List<Videojuego> listarDisponibles() throws RuntimeException {
+        List<Videojuego> lista = new ArrayList<>();
+
+        try (Connection con = new Conexion().getConexion();
+             PreparedStatement ps = con.prepareStatement(SELECCIONAR_DISPONIBLES);
+             ResultSet rs = ps.executeQuery()) { 
+
+            while (rs.next()) {
+                lista.add(crearJuegoDesdeResultSet(rs));
+            }
+        } catch (SQLException e) {
+            System.err.println("ERROR FATAL en VideojuegoDAO.listarDisponibles: " + e.getMessage());
+            e.printStackTrace();
+            throw new RuntimeException("Error en la Base de Datos al listar videojuegos disponibles.", e);
+        }
         return lista;
     }
 }

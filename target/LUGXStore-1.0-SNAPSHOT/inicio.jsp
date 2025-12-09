@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="assets/css/templatemo-lugx-gaming.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <style>
         #search {
             position: relative;
@@ -133,7 +133,7 @@
                     <!-- Menu -->
                     <ul class="nav">
                       <li><a href="inicio.jsp" class="active">Inicio</a></li>
-                      <li><a href="shop.jsp">Tienda</a></li>
+                      <li><a href="JuegoServlet?accion=juegosTienda">Tienda</a></li>
                       <li><a href="contact.jsp">Contactanos</a></li>
                   
                       <c:choose>
@@ -145,7 +145,7 @@
                                        border-radius: 50px; text-transform: uppercase;">
                                         Hola, <c:out value="${sessionScope.usuarioLogueado}"/>
                                     </a>
-                                </li class="dropdown-content">
+                                </li>
                                 <li><a href="CerrarSesion" style="color: white; background-color: #ee626b;
                                        font-weight: bold;
                                        border-radius: 50px; text-transform: uppercase;">Salir</a></li>
