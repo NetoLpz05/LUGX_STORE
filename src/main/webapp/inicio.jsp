@@ -265,7 +265,7 @@
                   <h2>Haz tu compra de pre-ordena y consigue los mejores <em>precios</em> para tí!</h2>
                 </div>
                 <div class="main-button">
-                  <a href="shop.jsp">Compra Ahora!</a>
+                  <a href="JuegoServlet?accion=juegosTienda">Compra Ahora!</a>
                 </div>
               </div>
             </div>

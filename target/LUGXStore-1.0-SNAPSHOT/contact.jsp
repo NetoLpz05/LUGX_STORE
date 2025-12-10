@@ -57,7 +57,7 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                       <li><a href="inicio.jsp">Inicio</a></li>
-                      <li><a href="shop.jsp">Tienda</a></li>
+                      <li><a href="JuegoServlet?accion=juegosTienda">Tienda</a></li>
                       <li><a href="contact.jsp" class="active">Contactanos</a></li>
                   
                       <c:choose>
@@ -102,7 +102,7 @@
       <div class="row">
         <div class="col-lg-12">
           <h3>Contactanos</h3>
-          <span class="breadcrumb"><a href="#">Inicio</a>  >  Contactanos</span>
+          <span class="breadcrumb"><a href="inicio.jsp">Inicio</a>  >  Contactanos</span>
         </div>
       </div>
     </div>

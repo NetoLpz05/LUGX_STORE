@@ -153,6 +153,7 @@
                         <p>Stock disponible: <strong><%= juego.getStock() %></strong></p>
 
                         <form action="agregarproducto" method="POST">
+                            <input type="hidden" name="accion" value="añadirCarrito">
                             <input type="hidden" name="id" value="<%= juego.getIdJuego() %>">
                             <input type="number" 
                                    name="cantidad" 
@@ -165,7 +166,6 @@
                         </form>
 
                         <ul>
-                            <li><span>ID:</span> <%= juego.getIdJuego() %></li>
                             <li><span>Género:</span> <a href="#"><%= juego.getGenero() %></a></li>
                             <li><span>Plataforma:</span> <a href="#"><%= juego.getPlataforma() %></a></li>
                         </ul>

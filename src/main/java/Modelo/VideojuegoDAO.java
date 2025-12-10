@@ -29,7 +29,7 @@ public class VideojuegoDAO {
     private static final String BUSCAR_X_NOMBRE = 
             "SELECT * FROM videojuego WHERE nombre LIKE ? LIMIT 5";
     private static final String ACTUALIZAR_STOCK =
-            "UPDATE videojuego SET stock = stock - ? WHERE idVideojuego = ?";
+            "UPDATE videojuego SET stock = stock - ? WHERE idJuego = ?";
     
     /**
      * Método auxiliar para mapear un ResultSet a un objeto Juego
@@ -212,22 +212,22 @@ public class VideojuegoDAO {
     }
     
     public boolean actualizarStock(int idVideojuego, int cantidadComprada) {
-        boolean flag = false;
+        int filasAfectadas = 0;
 
         try (Connection con = new Conexion().getConexion();
-             PreparedStatement pst = con.prepareStatement(ACTUALIZAR_STOCK)) {
+             PreparedStatement ps = con.prepareStatement(ACTUALIZAR_STOCK)) {
 
-            pst.setInt(1, cantidadComprada);
-            pst.setInt(2, idVideojuego);
+            ps.setInt(1, cantidadComprada);
+            ps.setInt(2, idVideojuego);
 
-            int filas = pst.executeUpdate();
-            if(filas > 0) {
-                flag = true;
+            filasAfectadas = ps.executeUpdate();
+            if (filasAfectadas > 0) {
+                con.commit(); 
             }
 
         } catch (Exception e) {
             System.err.println("Error al actualizar stock: " + e);
         }
-        return flag;
+        return filasAfectadas > 0;
     }
 }
