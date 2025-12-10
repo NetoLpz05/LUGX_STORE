@@ -109,22 +109,21 @@ public class UsuarioDAO {
     }
     
     public boolean actualizarUsuario(Usuario u) {
-        boolean flag = false;
+        int filasAfectadas = 0;
         
         try (Connection con = new Conexion().getConexion();
              PreparedStatement pst = con.prepareStatement(UPDATE)) {
 
-            // Asignación de parámetros en ORDEN (1, 2, 3, 4, 5)
             pst.setString(1, u.getNombre());
             pst.setString(2, u.getDireccion());
             pst.setString(3, u.getTelefono());
             pst.setString(4, u.getPassword());
             pst.setString(5, u.getCorreo());
 
-            int filasAfectadas = pst.executeUpdate();
+            filasAfectadas = pst.executeUpdate();
 
             if(filasAfectadas > 0){
-                flag = true;
+                con.commit();
             }
 
         } catch (SQLException e) {
@@ -132,7 +131,7 @@ public class UsuarioDAO {
             e.printStackTrace();
         } 
         
-        return flag;
+        return filasAfectadas > 0;
     }
     
     public Usuario obtenerPorCorreo(String correo) {

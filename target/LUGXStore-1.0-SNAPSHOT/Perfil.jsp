@@ -136,7 +136,7 @@
             </div>
 
             <div class="col-lg-4 col-md-6 mb-4">
-                <a href="shop.jsp" class="menu-card">
+                <a href="JuegoServlet?accion=juegosTienda" class="menu-card">
                     <div class="card-icon"><i class="fa fa-gamepad"></i></div>
                     <div class="card-title">Seguir Comprando</div>
                     <div class="card-desc">Explora el catálogo y encuentra tu próxima aventura.</div>

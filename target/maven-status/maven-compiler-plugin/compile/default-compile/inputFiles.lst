@@ -1,22 +1,19 @@
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\servlet\InicioSesion.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Controlador\Consultas.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Controlador\Conexion.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\servlet\Buscador.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\servlet\JuegoServlet.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Modelo\CarritoItem.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Modelo\Usuario.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Modelo\UsuarioDAO.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Modelo\Videojuego.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Modelo\Reservacion.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Modelo\VideojuegoDAO.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\servlet\AddCart.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\com\mycompany\lugxstore\JakartaRestConfiguration.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Modelo\ModeloProducto.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\servlet\RegistrarUsuarios.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Enum\tipoUsuario.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Modelo\Articulo.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\com\mycompany\lugxstore\resources\JakartaEE10Resource.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\servlet\ActualizarPerfilServlet.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\servlet\ProcesarCompraServlet.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\Controlador\ControladorProducto.java
-C:\Users\rodri\Documents\Github\LUGX_STORE\src\main\java\servlet\CerrarSesion.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\com\mycompany\lugxstore\JakartaRestConfiguration.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\Controlador\Conexion.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\servlet\Buscador.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\Modelo\UsuarioDAO.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\servlet\InicioSesion.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\Modelo\VideojuegoDAO.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\servlet\RegistrarUsuarios.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\servlet\CerrarSesion.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\Modelo\Usuario.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\servlet\ProcesarCompraServlet.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\servlet\AddCart.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\Enum\tipoUsuario.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\Controlador\Consultas.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\Modelo\Articulo.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\Modelo\Videojuego.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\com\mycompany\lugxstore\resources\JakartaEE10Resource.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\servlet\JuegoServlet.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\servlet\ActualizarPerfilServlet.java
+C:\Users\Usuario\Documents\5to Semestre\Apps Web\LUGX_STORE\src\main\java\Modelo\CarritoItem.java

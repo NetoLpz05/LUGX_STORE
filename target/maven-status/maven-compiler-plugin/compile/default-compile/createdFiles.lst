@@ -1,9 +1,7 @@
 Controlador\Consultas.class
 servlet\ActualizarPerfilServlet.class
 com\mycompany\lugxstore\JakartaRestConfiguration.class
-Modelo\ModeloProducto.class
 Modelo\Usuario.class
-Modelo\Reservacion.class
 servlet\JuegoServlet.class
 Controlador\Conexion.class
 Modelo\VideojuegoDAO.class
@@ -11,7 +9,6 @@ servlet\RegistrarUsuarios.class
 servlet\AddCart.class
 Enum\tipoUsuario.class
 Modelo\UsuarioDAO.class
-Controlador\ControladorProducto.class
 servlet\Buscador.class
 servlet\InicioSesion.class
 com\mycompany\lugxstore\resources\JakartaEE10Resource.class
